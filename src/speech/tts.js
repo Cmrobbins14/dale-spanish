@@ -43,7 +43,12 @@ export function rankVoice(voice, want) {
     score += lang === 'en-us' ? 100 : 60;
     if (GOOD_EN.test(voice.name)) score += 10;
   }
-  if (QUALITY.test(voice.name)) score += 25;
+  // On iPad, "Enhanced"/"Premium" shows up in the voice's ID, not its name
+  // (e.g. com.apple.voice.enhanced.es-MX.Paulina), so check both.
+  const id = `${voice.name} ${voice.voiceURI || ''}`;
+  if (/premium/i.test(id)) score += 35;
+  else if (QUALITY.test(id)) score += 25;
+  if (/\bcompact\b|\.compact\./i.test(id)) score -= 5;
   if (voice.localService) score += 3;
   // Novelty voices on Apple devices sound silly for lessons.
   if (/bells|bubbles|cellos|whisper|zarvox|trinoids|bad news|good news|organ|boing|jester|superstar|wobble|albert|fred|junior|ralph|kathy|bahh|grandma|grandpa|rocko|shelley|flo|eddy|reed|sandy/i.test(voice.name)) score -= 80;
@@ -58,6 +63,12 @@ export async function pickVoices() {
     .sort((a, b) => b.s - a.s)[0]?.v || null;
   chosen = { es: best('es'), en: best('en') };
   return chosen;
+}
+
+// Voices can finish loading (or be downloaded) after the app starts:
+// pick again whenever the list changes.
+if (synth?.addEventListener) {
+  synth.addEventListener('voiceschanged', () => { voicesReady = null; picked = pickVoices(); });
 }
 
 export function hasSpanishVoice() {
