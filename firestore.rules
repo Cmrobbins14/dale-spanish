@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Who can see and change what:
+//  • users/{uid}           – a grown-up's own account record (list of linked learners)
+//  • kids/{kidUid}         – one learner's profile, settings and progress
+//  • kids/{kidUid}/sessions – that learner's activity log (append-only)
+//
+// A learner reads/writes only their own document.
+// The linked grown-up (kids/{kidUid}.parentUid) can read it and change
+// settings (and reset progress) — never the link itself.
+// Nobody else can read anything.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isSelf(uid) { return signedIn() && request.auth.uid == uid; }
+    function linkedGrownUp(kidId) {
+      return signedIn() &&
+        get(/databases/$(database)/documents/kids/$(kidId)).data.parentUid == request.auth.uid;
+    }
+    // Small guard so documents can't be stuffed with junk fields.
+    function onlyKidFields(data) {
+      return data.keys().hasOnly(['parentUid', 'profile', 'settings', 'progress', 'updatedAt']);
+    }
+
+    match /users/{uid} {
+      allow read, write: if isSelf(uid);
+    }
+
+    match /kids/{kidId} {
+      allow read: if isSelf(kidId) || (signedIn() && resource.data.parentUid == request.auth.uid);
+
+      // Created by the learner's own account (the grown-up's app does this
+      // while briefly signed in as the new learner), linking the grown-up.
+      allow create: if isSelf(kidId)
+        && request.resource.data.parentUid is string
+        && onlyKidFields(request.resource.data);
+
+      // The learner: anything except who their grown-up is.
+      allow update: if isSelf(kidId)
+        && request.resource.data.parentUid == resource.data.parentUid
+        && onlyKidFields(request.resource.data);
+
+      // The linked grown-up: settings, and progress only for a reset.
+      allow update: if signedIn()
+        && resource.data.parentUid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['settings', 'progress', 'updatedAt']);
+
+      allow delete: if false;
+
+      match /sessions/{sessionId} {
+        allow read: if isSelf(kidId) || linkedGrownUp(kidId);
+        allow create: if isSelf(kidId);
+        allow update, delete: if false;
+      }
+    }
+  }
+}
