@@ -11,3 +11,6 @@ ui-debug.log
 worker/.wrangler/
 worker/.dev.vars
 .DS_Store
+
+# Personal planning notes - never publish
+Spanish-App-Prompt.md
