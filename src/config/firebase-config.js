@@ -10,12 +10,13 @@
 // ============================================================
 
 export const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: '',
+  apiKey: 'AIzaSyBcql9_AVVM6jAaza3E80LCXxdQx-hK3No',
+  authDomain: 'dale-spanish-d6668.firebaseapp.com',
+  projectId: 'dale-spanish-d6668',
+  storageBucket: 'dale-spanish-d6668.firebasestorage.app',
+  messagingSenderId: '294816137419',
+  appId: '1:294816137419:web:b5644bc177855158f59b4e',
+  // (measurementId left out on purpose: the app never loads Google Analytics.)
 };
 
 // Kid accounts sign in with a username. Behind the scenes Firebase needs
