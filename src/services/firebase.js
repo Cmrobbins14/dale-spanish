@@ -9,7 +9,12 @@ const useEmulators = typeof location !== 'undefined' &&
   /^(localhost|127\.0\.0\.1)$/.test(location.hostname) &&
   new URLSearchParams(location.search).has('emulators');
 
-export const firebaseEnabled = !!firebaseConfig.apiKey || useEmulators;
+// Automated tests on this computer can force local-only mode (never online).
+const forceLocal = typeof location !== 'undefined' &&
+  /^(localhost|127\.0\.0\.1)$/.test(location.hostname) &&
+  (() => { try { return localStorage.getItem('dale.forceLocal') === '1'; } catch { return false; } })();
+
+export const firebaseEnabled = (!!firebaseConfig.apiKey && !forceLocal) || useEmulators;
 
 let fbPromise = null;
 

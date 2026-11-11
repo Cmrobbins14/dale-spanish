@@ -136,6 +136,44 @@ test('poor speech: gentle "not yet", never "wrong", then Keep going', async ({ p
   expect(xp).toBeTruthy();
 });
 
+test('"Help me" reveals hidden Spanish; a "not yet" shows the answer', async ({ page }, testInfo) => {
+  await mockSpeech(page, 'poor');
+  await seedLearner(page);
+  await page.goto('./#/lesson/u3-l1');
+  await page.getByRole('button', { name: 'Skip intro' }).click();
+  // Full-text step: after a "not yet", the answer is shown and said for him.
+  await page.getByTestId('mic').click();
+  await expect(page.locator('.feedback.notyet')).toBeVisible();
+  await expect(page.getByText('Listen to how Chispa says it')).toBeVisible();
+  await page.getByTestId('mic').click();
+  await page.getByRole('button', { name: /Keep going/ }).click();
+  // Hidden-words step: "Help me" reveals every word.
+  await expect(page.locator('.word.hidden').first()).toBeVisible();
+  await page.getByRole('button', { name: /Help me/ }).click();
+  await expect(page.locator('.word.hidden')).toHaveCount(0);
+  await shot(page, testInfo, '24-help-me');
+});
+
+test('onboarding check: "I don\'t know this one yet" shows the answer and moves on', async ({ page }, testInfo) => {
+  await mockSpeech(page, 'good');
+  await page.goto('./');
+  await page.getByRole('button', { name: "Let's start!" }).click();
+  await page.getByPlaceholder('Nickname').fill('Leo');
+  await page.getByRole('button', { name: "That's me!" }).click();
+  await page.getByRole('button', { name: /Sports/ }).click();
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.getByRole('button', { name: /Sports/ }).click();
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.getByRole('button', { name: "Let's go!" }).click();
+  await expect(page.getByText('Quick check · 1')).toBeVisible();
+  await page.getByRole('button', { name: "I don't know this one yet" }).click();
+  await expect(page.getByText('No problem!')).toBeVisible();
+  await expect(page.locator('.phrase-words')).toContainText('Hola');
+  await shot(page, testInfo, '25-dont-know');
+  await page.getByRole('button', { name: 'Next' }).click();
+  await expect(page.getByText('Quick check · 2')).toBeVisible();
+});
+
 test('speech unsupported: self-check mode with a grown-up tip', async ({ page }, testInfo) => {
   await mockSpeech(page, 'unsupported');
   await seedLearner(page);
@@ -225,6 +263,7 @@ test('streak: freeze saves a missed day with a friendly message', async ({ page 
 });
 
 test('works from a GitHub Pages subpath with relative assets', async ({ page }) => {
+  await mockSpeech(page, 'good');
   const failed = [];
   page.on('response', (r) => { if (r.status() >= 400) failed.push(r.url()); });
   await page.goto('./');

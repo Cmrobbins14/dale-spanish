@@ -173,7 +173,17 @@ export function QaStep({ step, onItem, onDone, onPass }) {
   const [showEn, setShowEn] = useState(false);
   useEffect(() => {
     let live = true;
-    (async () => { await new Promise((r) => setTimeout(r, 200)); if (!live) return; setTalking(true); await speak(step.q, { lang: 'es' }); if (live) setTalking(false); })();
+    (async () => {
+      await new Promise((r) => setTimeout(r, 200)); if (!live) return;
+      setTalking(true);
+      await speak(step.q, { lang: 'es' });
+      if (live) setTalking(false);
+      // "Say this" questions: then model the answer, so he hears what to say.
+      if (live && step.say) {
+        await new Promise((r) => setTimeout(r, 500));
+        if (live) await speak(personalize(step.say, nick()), { lang: 'es' });
+      }
+    })();
     return () => { live = false; stopSpeaking(); };
   }, [step]);
   const ask = () => { unlockAudio(); setTalking(true); speak(step.q, { lang: 'es' }).then(() => setTalking(false)); };

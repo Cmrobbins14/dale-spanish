@@ -40,6 +40,7 @@ export function SpeakPanel({
   onComplete, // ({ outcome, score, tries, values })
   onPass, // called on first passing attempt (for combo/XP display)
   compact = false,
+  dontKnow = false, // placement check: offer "I don't know this one yet"
 }) {
   const settings = kid.value?.settings || {};
   const nickname = kid.value?.profile?.nickname || '';
@@ -55,13 +56,24 @@ export function SpeakPanel({
   const [level, setLevel] = useState(0);
   const [clip, setClip] = useState(null);
   const [note, setNote] = useState('');
-  const [hint, setHint] = useState(false);
+  const [helped, setHelped] = useState(false); // tapped "Help me" or got a "not yet": show + say it
+  const [gaveUp, setGaveUp] = useState(false); // placement: "I don't know this one yet"
   const [modelShown, setModelShown] = useState(false);
   const abortRef = useRef(null);
+  const replayRef = useRef(null);
   const passed = result && result.outcome !== 'notyet';
-  const revealed = passed || tries >= MAX_TRIES_BEFORE_SKIP || stage === 'full';
+  const revealed = passed || helped || gaveUp || tries >= MAX_TRIES_BEFORE_SKIP || stage === 'full';
   const hidden = revealed ? new Set() : hiddenSet(words, stage);
-  const showSpanish = !(stage === 'english' && !revealed && !hint);
+  const showSpanish = !(stage === 'english' && !revealed);
+  const sayItText = display || personalize(open?.model || '', nickname);
+
+  /** Reveal the answer and say it slowly, so he always hears what to say. */
+  function helpMe() {
+    unlockAudio();
+    setHelped(true);
+    if (open) setModelShown(true);
+    speak(sayItText, { lang: 'es', rate: RATES.slow });
+  }
 
   // Play the phrase when the step appears (not for the English-prompt stage).
   useEffect(() => {
@@ -71,7 +83,7 @@ export function SpeakPanel({
     }
     return undefined;
   }, [display, stage]);
-  useEffect(() => () => { abortRef.current?.abort(); stopSpeaking(); }, []);
+  useEffect(() => () => { abortRef.current?.abort(); clearTimeout(replayRef.current); stopSpeaking(); }, []);
 
   const play = (rate) => { unlockAudio(); speak(display || personalize(open?.model, nickname), { lang: 'es', rate }); };
   const playWord = (w) => { unlockAudio(); speak(w.replace(/[¿?¡!.,]/g, ''), { lang: 'es', rate: RATES.slow }); };
@@ -96,7 +108,8 @@ export function SpeakPanel({
     sfx(r.outcome === 'notyet' ? 'notyet' : r.outcome);
     if (r.outcome === 'notyet') {
       setTries((t) => t + 1);
-      if (open) setModelShown(true);
+      // Model it for him right away: show the answer and say it slowly.
+      replayRef.current = setTimeout(helpMe, 900);
     } else if (!result || result.outcome === 'notyet') {
       onPass?.(r.outcome, tries === 0);
     }
@@ -106,6 +119,7 @@ export function SpeakPanel({
   async function onMic() {
     unlockAudio(); unlockSfx();
     if (phase === 'listening') { abortRef.current?.abort(); return; } // "I'm done"
+    clearTimeout(replayRef.current);
     stopSpeaking();
     setNote(''); setHeard(''); setLit(new Set()); setResult(null);
     setPhase('listening');
@@ -176,7 +190,7 @@ export function SpeakPanel({
               <div class="phrase-words" lang="es">
                 {words.map((w, i) => (
                   <button class={wordClass(i)} onClick={() => playWord(w)} aria-label={hidden.has(i) ? 'hidden word, tap to hear' : `hear ${w}`}>
-                    {hidden.has(i) && hint ? `${w.replace(/[¿¡]/g, '')[0]}…` : w}
+                    {w}
                   </button>
                 ))}
               </div>
@@ -189,9 +203,6 @@ export function SpeakPanel({
                 <button class="icon-btn" onClick={() => play(RATES.normal)} aria-label="Play"><Icon name="sound" /></button>
                 <button class="icon-btn" onClick={() => play(RATES.slow)} aria-label="Play slowly"><Icon name="turtle" /></button>
               </>
-            )}
-            {(stage === 'english' || stage === 'all') && !revealed && !hint && (
-              <button class="btn light small" onClick={() => setHint(true)}><Icon name="lightbulb" /> Hint</button>
             )}
           </div>
         </div>
@@ -221,7 +232,7 @@ export function SpeakPanel({
               <div class="small">
                 {result.outcome === 'great' && (result.values?.name ? `¡Mucho gusto, ${result.values.name}!` : 'You nailed it.')}
                 {result.outcome === 'good' && (result.words?.some((w) => w.polish) ? 'That counts! Polish the orange word next time.' : 'That counts!')}
-                {result.outcome === 'notyet' && (tries >= MAX_TRIES_BEFORE_SKIP ? "Great effort! Let's keep going." : open ? 'Listen to the example, then try once more.' : 'Listen slowly 🐢 and try again.')}
+                {result.outcome === 'notyet' && (tries >= MAX_TRIES_BEFORE_SKIP ? "Great effort! Let's keep going." : 'Listen to how Chispa says it, then try once more.')}
               </div>
             </div>
           </div>
@@ -241,7 +252,15 @@ export function SpeakPanel({
           </div>
         )}
 
-        {engine === 'selfcheck' ? (
+        {gaveUp ? (
+          <div class="stack tight">
+            <div class="feedback info">
+              <span class="f-icon">👂</span>
+              <div class="grow"><div class="f-title">No problem!</div><div class="small">That's how you say it. You'll learn it soon.</div></div>
+            </div>
+            <button class="btn green block big" onClick={() => finish('skipped')} autofocus>Next</button>
+          </div>
+        ) : engine === 'selfcheck' ? (
           <div class="stack tight">
             <p class="center muted small" style={{ fontWeight: 700 }}>Say it out loud, then tap:</p>
             <button class="btn green block big" onClick={() => { sfx('good'); finish('selfcheck'); }}>I said it! 🗣️</button>
@@ -259,6 +278,11 @@ export function SpeakPanel({
             {tries >= MAX_TRIES_BEFORE_SKIP && phase !== 'listening' && (
               <button class="btn light block" onClick={() => finish('skipped')}>Keep going <Icon name="arrow" /></button>
             )}
+            {phase !== 'listening' && tries < MAX_TRIES_BEFORE_SKIP && (dontKnow ? (
+              <button class="btn light block" onClick={() => { setGaveUp(true); helpMe(); }}>I don't know this one yet</button>
+            ) : !(revealed && (!open || modelShown)) && (
+              <button class="btn ghost" onClick={helpMe}><Icon name="lightbulb" /> Help me</button>
+            ))}
           </div>
         )}
       </div>

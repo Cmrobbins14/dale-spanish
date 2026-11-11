@@ -6,7 +6,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { kid, updateKid, today } from '../data/store.js';
 import { recordItem } from '../data/actions.js';
 import { AVATARS, AVATAR_COLORS } from '../data/model.js';
-import { speak, stopSpeaking, unlockAudio } from '../speech/tts.js';
+import { speak, stopSpeaking, unlockAudio, RATES } from '../speech/tts.js';
 import { setStreakGoal } from '../engine/streaks.js';
 import { addDays, prettyDate } from '../engine/dates.js';
 import { courseOrder, lessonById, MINUTES_PER_LESSON } from '../content/index.js';
@@ -211,10 +211,10 @@ function Placement({ onNext }) {
       ) : item.open ? (
         <>
           <CoachSays text={item.q} sub={item.en} deps={[item.id]} />
-          <SpeakPanel key={item.id} open={item.open} onComplete={(r) => done(pointsFor(r.outcome), item.concept, r.outcome, r.score)} />
+          <SpeakPanel key={item.id} open={item.open} dontKnow onComplete={(r) => done(pointsFor(r.outcome), item.concept, r.outcome, r.score)} />
         </>
       ) : (
-        <SpeakPanel key={item.id} target={item.say} en={item.en} stage={item.stage} onComplete={(r) => done(pointsFor(r.outcome), item.concept, r.outcome, r.score)} />
+        <SpeakPanel key={item.id} target={item.say} en={item.en} stage={item.stage} dontKnow onComplete={(r) => done(pointsFor(r.outcome), item.concept, r.outcome, r.score)} />
       )}
     </>
   );
@@ -229,10 +229,18 @@ function PlacementListen({ item, onDone }) {
       <div class="phrase-card"><button class="btn light" onClick={() => speak(item.listen, { lang: 'es' })}>🔊 Play again</button></div>
       <div class="choices">
         {item.options.map((o, k) => (
-          <button class={`choice${picked === k ? (k === item.answer ? ' right' : ' try') : ''}`} disabled={picked != null}
-            onClick={() => { setPicked(k); sfx(k === item.answer ? 'great' : 'notyet'); setTimeout(() => onDone(k === item.answer), 700); }}>{o}</button>
+          <button class={`choice${picked != null && k === item.answer ? ' right' : picked === k ? ' try' : ''}`} disabled={picked != null}
+            onClick={() => { setPicked(k); sfx(k === item.answer ? 'great' : 'notyet'); setTimeout(() => onDone(k === item.answer), k === item.answer ? 700 : 1800); }}>{o}</button>
         ))}
       </div>
+      {picked == null ? (
+        <button class="btn light block" onClick={() => {
+          // Show the right answer and say the Spanish again, then move on.
+          setPicked(-1); speak(item.listen, { lang: 'es', rate: RATES.slow }); setTimeout(() => onDone(false), 2600);
+        }}>I don't know this one yet</button>
+      ) : picked !== item.answer && (
+        <div class="feedback info"><span class="f-icon">👂</span><div class="grow"><div class="f-title">No problem!</div><div class="small">It means “{item.options[item.answer]}”.</div></div></div>
+      )}
     </>
   );
 }

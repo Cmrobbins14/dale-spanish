@@ -100,7 +100,13 @@ export async function speak(text, { lang = 'es', rate, onWord } = {}) {
   if (window.__TEST_FAST_TTS) { onWord?.(-1); return; }
   await pickVoicesOnce();
   const token = ++speakToken;
-  synth.cancel();
+  // iPad Safari quietly drops an utterance queued right after cancel(), so
+  // only cancel when something is playing, then give it a moment to settle.
+  if (synth.speaking || synth.pending) {
+    synth.cancel();
+    await new Promise((r) => setTimeout(r, 80));
+  }
+  if (token !== speakToken) return; // a newer speak() took over
   // Spoken text shouldn't include blanks/slots or emoji.
   const clean = String(text).replace(/_+/g, ' ').replace(/\p{Extended_Pictographic}/gu, '');
   const u = new SpeechSynthesisUtterance(clean);
@@ -111,14 +117,25 @@ export async function speak(text, { lang = 'es', rate, onWord } = {}) {
   u.pitch = lang === 'en' ? 1.05 : 1;
   return new Promise((resolve) => {
     let done = false;
+    let started = false;
     const finish = () => { if (!done) { done = true; resolve(); } };
+    u.onstart = () => { started = true; };
     u.onend = finish;
     u.onerror = finish;
     if (onWord) u.onboundary = (e) => { if (token === speakToken) onWord(e.charIndex); };
     // Safety net: estimate duration from length and rate.
     const ms = 1200 + (clean.length * 75) / u.rate;
-    setTimeout(finish, ms);
+    setTimeout(finish, ms + 1500);
     synth.speak(u);
+    // If Safari silently dropped it, try once more.
+    setTimeout(() => {
+      if (!started && !done && token === speakToken) {
+        const again = new SpeechSynthesisUtterance(clean);
+        Object.assign(again, { voice: u.voice, lang: u.lang, rate: u.rate, pitch: u.pitch, onend: finish, onerror: finish });
+        synth.cancel();
+        synth.speak(again);
+      }
+    }, 1200);
   });
 }
 

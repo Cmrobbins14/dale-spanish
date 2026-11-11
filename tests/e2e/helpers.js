@@ -7,6 +7,8 @@
  */
 export async function mockSpeech(page, mode = 'good') {
   await page.addInitScript((m) => {
+    // Local-only mode for tests (your real Firebase project is never touched).
+    try { localStorage.setItem('dale.forceLocal', '1'); } catch { /* ignore */ }
     window.__TEST_FAST_TTS = true;
     window.__speechMode = m;
     if (m === 'unsupported') {
