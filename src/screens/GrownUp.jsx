@@ -146,6 +146,7 @@ function AddKid({ onDone }) {
   async function submit(e) {
     e.preventDefault();
     const u = username.trim().toLowerCase();
+    if (u.includes('@')) { setErr("The username isn't an email. Make up a short name instead, like cam2015. No email needed!"); return; }
     if (!USERNAME_RE.test(u)) { setErr('Username: 3–20 lowercase letters, numbers, dots or dashes.'); return; }
     if (password.length < 6) { setErr('Password needs at least 6 characters (a Firebase rule).'); return; }
     setBusy(true); setErr('');
@@ -160,7 +161,7 @@ function AddKid({ onDone }) {
     <form class="card stack" onSubmit={submit} style={{ marginBottom: 20 }}>
       <h3>New learner account</h3>
       <p class="muted small" style={{ fontWeight: 700 }}>No email needed. Use a nickname, not a full name.</p>
-      <label class="field">Username (for signing in)<input class="input" value={username} onInput={(e) => setUsername(e.currentTarget.value)} autocapitalize="off" autocorrect="off" spellcheck={false} required /></label>
+      <label class="field">Username (a short made-up name, not an email)<input class="input" placeholder="e.g. cam2015" value={username} onInput={(e) => setUsername(e.currentTarget.value)} autocapitalize="off" autocorrect="off" spellcheck={false} required /></label>
       <label class="field">Nickname (shown in the app)<input class="input" value={nickname} maxLength={16} onInput={(e) => setNickname(e.currentTarget.value)} /></label>
       <label class="field">Password (6+ characters)<input class="input" type="text" value={password} onInput={(e) => setPassword(e.currentTarget.value)} autocomplete="new-password" required /></label>
       {err && <p class="error">{err}</p>}
