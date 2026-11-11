@@ -1,0 +1,142 @@
+{
+  "id": "u0",
+  "title": "¡Hola otra vez!",
+  "titleEn": "Quick warm-up review",
+  "icon": "👋",
+  "color": "#4B3FE0",
+  "tags": ["basics"],
+  "lessons": [
+    {
+      "id": "u0-l1",
+      "type": "lesson",
+      "title": "¡Hola!",
+      "subtitle": "Greetings",
+      "icon": "👋",
+      "canDo": "I can say hi and ask how someone is",
+      "scenario": "Saying hi to a friend before practice",
+      "intro": [
+        { "en": "Hi! I'm Chispa, your coach. Let's warm up with words you already know." },
+        { "en": "When you see a friend, say:", "es": "¡Hola!" },
+        { "en": "Your turn. Tap the mic and say it!" }
+      ],
+      "phrases": [
+        { "id": "hola", "es": "¡Hola!", "en": "Hi! / Hello!", "pic": "👋", "help": "The everyday way to say hi. The H is silent, so it sounds like \"OH-lah\"." },
+        { "id": "como-estas", "es": "¿Cómo estás?", "en": "How are you?", "pic": "🙂", "help": "Ask a friend how they're doing. In Spanish, a question gets an upside-down ¿ at the start." },
+        { "id": "bien-gracias", "es": "Bien, gracias.", "en": "Good, thanks.", "pic": "👍", "help": "A quick, friendly answer to ¿Cómo estás? Say \"muy bien\" if you're doing great." },
+        { "id": "buenos-dias", "es": "Buenos días.", "en": "Good morning.", "pic": "🌅", "help": "Say this before lunchtime. Word for word it means \"good days\"." }
+      ],
+      "frame": {
+        "id": "hasta-x",
+        "es": "¡Hasta {x}!",
+        "en": "See you {x}!",
+        "help": "Hasta means \"until\". Hasta luego is literally \"until later\".",
+        "fillers": [
+          { "es": "luego", "en": "later", "pic": "👋" },
+          { "es": "mañana", "en": "tomorrow", "pic": "📅" },
+          { "es": "pronto", "en": "soon", "pic": "⏱️" }
+        ]
+      },
+      "qa": [
+        { "q": "¡Hola!", "qEn": "Hi!", "say": "¡Hola!", "concept": "hola" },
+        { "q": "¿Cómo estás?", "qEn": "How are you?", "open": true, "accept": ["bien", "muy bien", "bien gracias", "muy bien gracias", "super bien", "excelente", "mas o menos", "{any} gracias"], "model": "Muy bien, gracias.", "hint": "Bien, gracias.", "concept": "bien-gracias" },
+        { "q": "¡Hasta luego!", "qEn": "See you later!", "open": true, "accept": ["hasta luego", "hasta manana", "hasta pronto", "adios", "chao", "nos vemos"], "model": "¡Hasta luego!", "hint": "¡Hasta luego!", "concept": "hasta-x" }
+      ]
+    },
+    {
+      "id": "u0-l2",
+      "type": "lesson",
+      "title": "Los números",
+      "subtitle": "Numbers and your age",
+      "icon": "🔢",
+      "canDo": "I can count and say how old I am",
+      "scenario": "Counting off at the start of practice",
+      "intro": [
+        { "en": "Coach time! Let's count off, just like at practice." },
+        { "en": "One, two, three, four, five:", "es": "uno, dos, tres, cuatro, cinco" },
+        { "en": "Now you count!" }
+      ],
+      "phrases": [
+        { "id": "numeros-1-5", "es": "uno, dos, tres, cuatro, cinco", "en": "one, two, three, four, five", "pic": "🖐️", "help": "The numbers one to five. Tres rolls the R just a tiny bit." },
+        { "id": "numeros-6-10", "es": "seis, siete, ocho, nueve, diez", "en": "six, seven, eight, nine, ten", "pic": "🔟", "help": "Six to ten. Siete sounds like \"see-EH-teh\"." },
+        { "id": "cuantos-anos", "es": "¿Cuántos años tienes?", "en": "How old are you?", "pic": "🎂", "help": "Word for word: \"How many years do you have?\" In Spanish you HAVE an age.", "tip": "Años means years. Keep the ñ: it sounds like \"AH-nyohs\"." },
+        { "id": "tengo-once-anos", "es": "Tengo once años.", "en": "I'm eleven years old.", "pic": "🎉", "help": "Literally \"I have eleven years.\" Swap in your own age!" }
+      ],
+      "frame": {
+        "id": "tengo-x-anos",
+        "es": "Tengo {x} años.",
+        "en": "I'm {x} years old.",
+        "help": "Use tengo + a number + años to say your age.",
+        "fillers": [
+          { "es": "diez", "en": "ten", "pic": "🔟" },
+          { "es": "once", "en": "eleven", "pic": "1️⃣" },
+          { "es": "doce", "en": "twelve", "pic": "🕛" },
+          { "es": "trece", "en": "thirteen", "pic": "🎂" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Cuántos años tienes?", "qEn": "How old are you?", "open": true, "accept": ["tengo {number} años", "tengo {number}", "{number} años", "{number}"], "model": "Tengo once años.", "hint": "Tengo ___ años.", "concept": "tengo-x-anos" },
+        { "q": "¿Cuántos son dos más dos?", "qEn": "What's two plus two?", "say": "cuatro", "pic": "➕" },
+        { "q": "Cuenta del uno al cinco.", "qEn": "Count from one to five.", "say": "uno, dos, tres, cuatro, cinco", "concept": "numeros-1-5" }
+      ]
+    },
+    {
+      "id": "u0-l3",
+      "type": "lesson",
+      "title": "Me llamo…",
+      "subtitle": "Introduce yourself",
+      "icon": "🙋",
+      "canDo": "I can introduce myself",
+      "scenario": "Meeting someone new on the first day of soccer camp",
+      "intro": [
+        { "en": "New team, new friends! Let's practice introducing yourself." },
+        { "en": "To ask someone's name, say:", "es": "¿Cómo te llamas?" },
+        { "en": "And to answer, say Me llamo and your name. Try it!" }
+      ],
+      "phrases": [
+        { "id": "como-te-llamas", "es": "¿Cómo te llamas?", "en": "What's your name?", "pic": "❓", "help": "Literally \"How do you call yourself?\" It's how kids ask each other's names." },
+        { "id": "me-llamo", "es": "Me llamo {me}.", "en": "My name is {me}.", "pic": "🙋", "help": "Me llamo means \"I call myself\". Put your name at the end. Double L sounds like a Y: \"YAH-mo\"." },
+        { "id": "mucho-gusto", "es": "Mucho gusto.", "en": "Nice to meet you.", "pic": "🤝", "help": "Say this after you learn someone's name. It means \"much pleasure\"." },
+        { "id": "y-tu", "es": "¿Y tú?", "en": "And you?", "pic": "👉", "help": "Bounce a question back to the other person. Tú with an accent means \"you\"." }
+      ],
+      "frame": {
+        "id": "soy-x",
+        "es": "Soy {x}.",
+        "en": "I'm {x}.",
+        "help": "Soy means \"I am\". Use it to say what you are or what you love.",
+        "fillers": [
+          { "es": "estudiante", "en": "a student", "pic": "🎒" },
+          { "es": "futbolista", "en": "a soccer player", "pic": "⚽", "tag": "sports" },
+          { "es": "fan de la lucha libre", "en": "a lucha libre fan", "pic": "🤼", "tag": "sports" },
+          { "es": "muy rápido", "en": "really fast", "pic": "⚡" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Cómo te llamas?", "qEn": "What's your name?", "open": true, "accept": ["me llamo {name}", "soy {name}", "mi nombre es {name}", "{name}"], "model": "Me llamo {me}.", "hint": "Me llamo ___.", "concept": "me-llamo" },
+        { "q": "Yo me llamo Chispa. ¡Mucho gusto!", "qEn": "My name is Chispa. Nice to meet you!", "open": true, "accept": ["mucho gusto", "igualmente", "el gusto es mio", "mucho gusto chispa"], "model": "¡Mucho gusto!", "hint": "Mucho gusto.", "concept": "mucho-gusto" },
+        { "q": "Estoy muy bien. ¿Y tú?", "qEn": "I'm doing great. And you?", "open": true, "accept": ["bien", "muy bien", "bien gracias", "muy bien gracias", "super bien", "mas o menos", "{any} gracias"], "model": "Muy bien, gracias.", "hint": "Bien, gracias.", "concept": "bien-gracias" }
+      ]
+    },
+    {
+      "id": "u0-l4",
+      "type": "roleplay",
+      "title": "First day at camp",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can meet a new teammate in Spanish",
+      "scenario": "It's the first day of soccer camp. Sofi, a new teammate, comes over to say hi.",
+      "character": { "name": "Sofi", "emoji": "⚽", "color": "#FF8A1F" },
+      "start": "hi",
+      "nodes": {
+        "hi": { "say": "¡Hola! Me llamo Sofi. ¿Cómo te llamas?", "en": "Hi! My name is Sofi. What's your name?", "reply": { "accept": ["me llamo {name}", "soy {name}", "mi nombre es {name}", "{name}"], "model": "Me llamo {me}.", "hint": "Me llamo ___." }, "next": "age" },
+        "age": { "say": "¡Mucho gusto, {name}! ¿Cuántos años tienes?", "en": "Nice to meet you, {name}! How old are you?", "reply": { "accept": ["tengo {number} años", "tengo {number}", "{number} años", "{number}"], "model": "Tengo once años.", "hint": "Tengo ___ años." }, "next": "how" },
+        "how": { "say": "¡Genial! Yo tengo doce. ¿Cómo estás hoy?", "en": "Cool! I'm twelve. How are you today?", "reply": { "model": "Muy bien, gracias.", "hint": "Bien, gracias.", "branches": [ { "accept": ["bien", "muy bien", "bien gracias", "muy bien gracias", "super bien", "excelente", "{any} gracias"], "next": "good" }, { "accept": ["mal", "mas o menos", "cansado", "regular", "no muy bien"], "next": "meh" } ] }, "next": "good" },
+        "good": { "say": "¡Qué bien! ¡Vamos a jugar!", "en": "Great! Let's play!", "next": "bye" },
+        "meh": { "say": "¡Ánimo! El fútbol te va a gustar.", "en": "Cheer up! You're going to like soccer.", "next": "bye" },
+        "bye": { "say": "Me voy con el entrenador. ¡Hasta luego!", "en": "I'm going with the coach. See you later!", "reply": { "accept": ["hasta luego", "adios", "hasta pronto", "hasta manana", "chao", "nos vemos"], "model": "¡Hasta luego, Sofi!", "hint": "¡Hasta luego!" }, "next": "end" },
+        "end": { "say": "¡Nos vemos en la cancha!", "en": "See you on the field!", "end": true }
+      }
+    },
+    { "id": "u0-l5", "type": "review", "title": "Warm-up review", "subtitle": "Unit review", "icon": "🔁" },
+    { "id": "u0-l6", "type": "checkpoint", "title": "Check your progress", "subtitle": "How much do you remember?", "icon": "🏁" }
+  ]
+}

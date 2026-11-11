@@ -1,0 +1,90 @@
+/* ============================================================
+   Design tokens — the one place for colors, type, spacing, radius.
+   ============================================================ */
+:root {
+  /* Brand */
+  --c-primary: #5b4bff;
+  --c-primary-strong: #4335e6;
+  --c-primary-deep: #2e2299;
+  --c-primary-soft: #eceaff;
+  --c-accent: #ff8a1f;
+  --c-accent-strong: #e5700a;
+  --c-accent-soft: #fff1e3;
+  --c-field: #1fb871; /* soccer-field green: success */
+  --c-field-strong: #17975c;
+  --c-field-soft: #e2f8ed;
+  --c-teal: #10a3a3; /* "good" — still a win */
+  --c-teal-soft: #ddf5f5;
+  --c-sun: #ffc93c;
+  --c-sun-soft: #fff6d9;
+  --c-flame: #ff6b2c;
+  --c-ice: #4fb7ff;
+  --c-ice-soft: #e3f3ff;
+  --c-soft-miss: #f0a43a; /* gentle "polish this" color — never red */
+  --c-soft-miss-bg: #fff3df;
+
+  /* Neutrals */
+  --c-ink: #1b1f3b;
+  --c-ink-2: #4a5070;
+  --c-ink-3: #8a90ab;
+  --c-line: #e6e5f0;
+  --c-bg: #f6f5fb;
+  --c-surface: #ffffff;
+  --c-surface-2: #f1f0f8;
+
+  /* Type */
+  --font-display: 'Fredoka', 'Nunito', ui-rounded, system-ui, sans-serif;
+  --font-body: 'Nunito', ui-rounded, system-ui, -apple-system, sans-serif;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: 1.3125rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+
+  /* Spacing (4-pt scale) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  /* Radius */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* Depth: chunky "game" buttons press down by their bottom edge */
+  --press: 4px;
+  --shadow-card: 0 1px 2px rgba(27, 31, 59, 0.06), 0 6px 18px rgba(27, 31, 59, 0.06);
+  --shadow-pop: 0 12px 40px rgba(27, 31, 59, 0.18);
+
+  /* Touch */
+  --tap: 52px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+
+  /* Safe areas (iPad Home Screen app) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+  }
+}
