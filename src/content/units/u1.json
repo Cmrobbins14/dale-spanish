@@ -1,0 +1,178 @@
+{
+  "id": "u1",
+  "title": "Yo y mis cosas",
+  "titleEn": "Me and my things",
+  "icon": "🎒",
+  "color": "#FF8A1F",
+  "tags": ["basics"],
+  "lessons": [
+    {
+      "id": "u1-l1",
+      "type": "lesson",
+      "title": "Mi mochila",
+      "subtitle": "Things I have",
+      "icon": "🎒",
+      "canDo": "I can say what I have in my backpack",
+      "scenario": "Packing your backpack for practice",
+      "intro": [
+        { "en": "Practice is today! Let's pack your backpack." },
+        { "en": "To say \"I have a backpack\", say:", "es": "Tengo una mochila." },
+        { "en": "Your turn!" }
+      ],
+      "phrases": [
+        { "id": "tengo-una-mochila", "es": "Tengo una mochila.", "en": "I have a backpack.", "pic": "🎒", "help": "Tengo means \"I have\". Una means \"a\" for words like mochila.", "tip": "Spanish has two words for \"a\": un and una. Each word comes with its own. Un balón, una mochila." },
+        { "id": "tengo-un-balon", "es": "Tengo un balón.", "en": "I have a ball.", "pic": "⚽", "help": "Balón is a ball you kick or throw. Stress the end: \"bah-LOHN\"." },
+        { "id": "que-tienes", "es": "¿Qué tienes?", "en": "What do you have?", "pic": "🤔", "help": "Ask a friend what they have. Tienes means \"you have\"." }
+      ],
+      "frame": {
+        "id": "tengo-x",
+        "es": "Tengo {x}.",
+        "en": "I have {x}.",
+        "help": "Tengo + a thing. Use it for anything you have.",
+        "fillers": [
+          { "es": "un lápiz", "en": "a pencil", "pic": "✏️" },
+          { "es": "una botella de agua", "en": "a water bottle", "pic": "💧" },
+          { "es": "unos tenis", "en": "some sneakers", "pic": "👟", "tag": "sports" },
+          { "es": "una tableta", "en": "a tablet", "pic": "📱", "tag": "games" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Qué tienes en tu mochila?", "qEn": "What do you have in your backpack?", "open": true, "accept": ["tengo {any}", "{any}"], "model": "Tengo un lápiz y un balón.", "hint": "Tengo ___.", "concept": "tengo-x" },
+        { "q": "¿Tienes un balón?", "qEn": "Do you have a ball?", "say": "Tengo un balón.", "concept": "tengo-un-balon" },
+        { "q": "¿Qué tienes para el agua?", "qEn": "What do you have for water?", "say": "Tengo una botella de agua.", "concept": "tengo-x" }
+      ]
+    },
+    {
+      "id": "u1-l2",
+      "type": "lesson",
+      "title": "Los colores",
+      "subtitle": "Colors",
+      "icon": "🎨",
+      "canDo": "I can name colors and my favorite color",
+      "scenario": "Picking the colors for your new team jersey",
+      "intro": [
+        { "en": "Your team needs new jerseys. What colors should they be?" },
+        { "en": "Blue is", "es": "azul" },
+        { "en": "Let's talk colors!" }
+      ],
+      "phrases": [
+        { "id": "mi-color-favorito", "es": "Mi color favorito es el azul.", "en": "My favorite color is blue.", "pic": "💙", "help": "In Spanish, favorito comes after color. Colors often get \"el\" in front: el azul, el verde." },
+        { "id": "de-que-color", "es": "¿De qué color es?", "en": "What color is it?", "pic": "🎨", "help": "Literally \"Of what color is it?\"" }
+      ],
+      "frame": {
+        "id": "es-x-color",
+        "es": "Es {x}.",
+        "en": "It's {x}.",
+        "help": "Es means \"it is\". Add a color to describe something.",
+        "fillers": [
+          { "es": "rojo", "en": "red", "pic": "🔴" },
+          { "es": "azul", "en": "blue", "pic": "🔵" },
+          { "es": "verde", "en": "green", "pic": "🟢" },
+          { "es": "amarillo", "en": "yellow", "pic": "🟡" },
+          { "es": "negro", "en": "black", "pic": "⚫" },
+          { "es": "blanco", "en": "white", "pic": "⚪" }
+        ]
+      },
+      "slots": { "color": ["rojo", "azul", "verde", "amarillo", "negro", "blanco", "morado", "anaranjado", "naranja", "rosa", "gris", "cafe"] },
+      "qa": [
+        { "q": "¿Cuál es tu color favorito?", "qEn": "What's your favorite color?", "open": true, "accept": ["mi color favorito es el {color}", "mi color favorito es {color}", "es el {color}", "el {color}", "{color}"], "model": "Mi color favorito es el verde.", "hint": "Mi color favorito es el ___.", "concept": "mi-color-favorito" },
+        { "q": "¿De qué color es el balón?", "qEn": "What color is the ball?", "pic": "⚽", "say": "Es blanco y negro.", "concept": "es-x-color" },
+        { "q": "¿De qué color es tu mochila?", "qEn": "What color is your backpack?", "open": true, "accept": ["es {color}", "mi mochila es {color}", "{color}"], "model": "Es azul.", "hint": "Es ___.", "concept": "es-x-color" }
+      ]
+    },
+    {
+      "id": "u1-l3",
+      "type": "lesson",
+      "title": "¿Tienes…?",
+      "subtitle": "Asking and answering",
+      "icon": "✏️",
+      "canDo": "I can ask if someone has something and answer yes or no",
+      "scenario": "Borrowing supplies from a classmate",
+      "intro": [
+        { "en": "Uh-oh, you forgot your pencil! Ask a friend if they have one." },
+        { "en": "Do you have a pencil?", "es": "¿Tienes un lápiz?" },
+        { "en": "Let's practice asking." }
+      ],
+      "phrases": [
+        { "id": "tienes-un-lapiz", "es": "¿Tienes un lápiz?", "en": "Do you have a pencil?", "pic": "✏️", "help": "Tienes means \"you have\". Make your voice go up for a question." },
+        { "id": "si-tengo", "es": "Sí, tengo.", "en": "Yes, I have one.", "pic": "👍", "help": "Sí (with an accent) means yes." },
+        { "id": "no-no-tengo", "es": "No, no tengo.", "en": "No, I don't have one.", "pic": "🙅", "help": "Say no twice!", "tip": "The first no answers the question. The second no goes before the verb to make it negative: no tengo = I don't have." }
+      ],
+      "frame": {
+        "id": "tienes-x",
+        "es": "¿Tienes {x}?",
+        "en": "Do you have {x}?",
+        "help": "Ask if someone has something: ¿Tienes + thing?",
+        "fillers": [
+          { "es": "una pluma", "en": "a pen", "pic": "🖊️" },
+          { "es": "un borrador", "en": "an eraser", "pic": "🧽" },
+          { "es": "una regla", "en": "a ruler", "pic": "📏" },
+          { "es": "un balón", "en": "a ball", "pic": "⚽", "tag": "sports" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Tienes un perro?", "qEn": "Do you have a dog?", "pic": "🐶", "open": true, "accept": ["si tengo {any}", "si tengo", "si", "no no tengo", "no tengo", "no"], "model": "Sí, tengo un perro.", "hint": "Sí, tengo. / No, no tengo.", "concept": "si-tengo" },
+        { "q": "¿Tienes un lápiz?", "qEn": "Do you have a pencil?", "say": "Sí, tengo.", "concept": "si-tengo" },
+        { "q": "¿Tienes un dinosaurio?", "qEn": "Do you have a dinosaur?", "pic": "🦖", "say": "No, no tengo.", "concept": "no-no-tengo" }
+      ]
+    },
+    {
+      "id": "u1-l4",
+      "type": "lesson",
+      "title": "Me gusta",
+      "subtitle": "Things I like",
+      "icon": "❤️",
+      "canDo": "I can say what I like and don't like",
+      "scenario": "Telling a new friend what you're into",
+      "intro": [
+        { "en": "Let's talk about stuff you love." },
+        { "en": "I like soccer:", "es": "Me gusta el fútbol." },
+        { "en": "Say it with me!" }
+      ],
+      "phrases": [
+        { "id": "me-gusta-el-futbol", "es": "Me gusta el fútbol.", "en": "I like soccer.", "pic": "⚽", "help": "Word for word: \"Soccer pleases me.\" That's how Spanish says \"I like\".", "tip": "Spanish adds el or la before things you like: me gusta EL fútbol, me gusta LA pizza." },
+        { "id": "no-me-gusta", "es": "No me gusta.", "en": "I don't like it.", "pic": "👎", "help": "Put no in front to flip it." },
+        { "id": "te-gusta", "es": "¿Te gusta?", "en": "Do you like it?", "pic": "🤔", "help": "Te means \"you\" here. ¿Te gusta el fútbol? = Do you like soccer?" }
+      ],
+      "frame": {
+        "id": "me-gusta-x",
+        "es": "Me gusta {x}.",
+        "en": "I like {x}.",
+        "help": "Me gusta + a thing or activity.",
+        "fillers": [
+          { "es": "la pizza", "en": "pizza", "pic": "🍕", "tag": "food" },
+          { "es": "el básquetbol", "en": "basketball", "pic": "🏀", "tag": "sports" },
+          { "es": "la música", "en": "music", "pic": "🎵", "tag": "music" },
+          { "es": "la lucha libre", "en": "lucha libre wrestling", "pic": "🤼", "tag": "sports" },
+          { "es": "jugar videojuegos", "en": "playing video games", "pic": "🎮", "tag": "games" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Te gusta el fútbol?", "qEn": "Do you like soccer?", "open": true, "accept": ["si me gusta {any}", "si me gusta", "me gusta {any}", "si", "no me gusta", "no"], "model": "¡Sí, me gusta mucho!", "hint": "Sí, me gusta. / No me gusta.", "concept": "me-gusta-el-futbol" },
+        { "q": "¿Qué te gusta?", "qEn": "What do you like?", "open": true, "accept": ["me gusta {any}", "{any}"], "model": "Me gusta la lucha libre.", "hint": "Me gusta ___.", "concept": "me-gusta-x" },
+        { "q": "¿Te gusta la pizza?", "qEn": "Do you like pizza?", "pic": "🍕", "open": true, "accept": ["si me gusta {any}", "si me gusta", "me gusta {any}", "si", "no me gusta", "no"], "model": "Sí, me gusta la pizza.", "hint": "Sí, me gusta.", "concept": "te-gusta" }
+      ]
+    },
+    {
+      "id": "u1-l5",
+      "type": "roleplay",
+      "title": "Show and tell",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can chat with a classmate about my things",
+      "scenario": "At recess, your classmate Mateo is curious about what's in your backpack.",
+      "character": { "name": "Mateo", "emoji": "🧢", "color": "#2BB0A8" },
+      "start": "what",
+      "nodes": {
+        "what": { "say": "¡Hola! ¿Qué tienes ahí?", "en": "Hi! What do you have there?", "reply": { "accept": ["tengo {any}", "un {any}", "una {any}", "{any}"], "model": "Tengo un balón.", "hint": "Tengo ___." }, "next": "color" },
+        "color": { "say": "¡Qué chido! ¿De qué color es?", "en": "So cool! What color is it?", "reply": { "accept": ["es {color}", "{color}", "es {color} y {color}"], "model": "Es blanco y negro.", "hint": "Es ___." }, "next": "soccer" },
+        "soccer": { "say": "Me gusta ese color. ¿Te gusta el fútbol?", "en": "I like that color. Do you like soccer?", "reply": { "model": "¡Sí, me gusta!", "hint": "Sí, me gusta. / No me gusta.", "branches": [ { "accept": ["si me gusta {any}", "si me gusta", "si", "me gusta", "claro"], "next": "yes" }, { "accept": ["no me gusta", "no", "no mucho"], "next": "no" } ] }, "next": "yes" },
+        "yes": { "say": "¡A mí también! ¿Tienes tenis?", "en": "Me too! Do you have sneakers?", "reply": { "accept": ["si tengo", "si", "no no tengo", "no tengo", "no", "si tengo tenis"], "model": "Sí, tengo.", "hint": "Sí, tengo." }, "next": "end" },
+        "no": { "say": "Está bien. ¿Qué te gusta?", "en": "That's okay. What do you like?", "reply": { "accept": ["me gusta {any}", "{any}"], "model": "Me gusta la lucha libre.", "hint": "Me gusta ___." }, "next": "end" },
+        "end": { "say": "¡Genial! Nos vemos en el recreo.", "en": "Awesome! See you at recess.", "end": true }
+      },
+      "slots": { "color": ["rojo", "azul", "verde", "amarillo", "negro", "blanco", "morado", "anaranjado", "naranja", "rosa", "gris", "cafe"] }
+    },
+    { "id": "u1-l6", "type": "review", "title": "Unit review", "subtitle": "Me and my things", "icon": "🔁" }
+  ]
+}

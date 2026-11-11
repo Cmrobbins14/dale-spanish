@@ -1,0 +1,177 @@
+{
+  "id": "u7",
+  "title": "Mi día",
+  "titleEn": "My day and telling time",
+  "icon": "⏰",
+  "color": "#F2B705",
+  "tags": ["daily"],
+  "lessons": [
+    {
+      "id": "u7-l1",
+      "type": "lesson",
+      "title": "¿Qué hora es?",
+      "subtitle": "Telling time",
+      "icon": "🕒",
+      "canDo": "I can tell the time",
+      "scenario": "Checking the clock so you're not late for practice",
+      "intro": [
+        { "en": "Don't be late for practice! Let's learn to tell time." },
+        { "en": "What time is it?", "es": "¿Qué hora es?" },
+        { "en": "Ask it!" }
+      ],
+      "phrases": [
+        { "id": "que-hora-es", "es": "¿Qué hora es?", "en": "What time is it?", "pic": "⏰", "help": "Hora = hour or time. The H is silent: \"OH-rah\"." },
+        { "id": "es-la-una", "es": "Es la una.", "en": "It's one o'clock.", "pic": "🕐", "help": "One o'clock is special: es la una.", "tip": "Use es la for one o'clock and son las for every other hour: son las dos, son las tres." },
+        { "id": "son-las-tres", "es": "Son las tres.", "en": "It's three o'clock.", "pic": "🕒", "help": "Son las + number for 2 o'clock and up." }
+      ],
+      "frame": {
+        "id": "son-las-x",
+        "es": "Son las {x}.",
+        "en": "It's {x}.",
+        "help": "Son las + hour. Add y media for :30 and y cuarto for :15.",
+        "fillers": [
+          { "es": "dos", "en": "two o'clock", "pic": "🕑" },
+          { "es": "cinco y media", "en": "five thirty", "pic": "🕠" },
+          { "es": "siete", "en": "seven o'clock", "pic": "🕖" },
+          { "es": "ocho y cuarto", "en": "a quarter past eight", "pic": "🕗" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Qué hora es?", "qEn": "What time is it?", "pic": "🕒", "say": "Son las tres.", "concept": "son-las-tres" },
+        { "q": "¿Qué hora es?", "qEn": "What time is it?", "pic": "🕐", "say": "Es la una.", "concept": "es-la-una" },
+        { "q": "¿A qué hora es tu entrenamiento?", "qEn": "What time is your practice?", "open": true, "accept": ["es a las {number}", "a las {number}", "a la una", "es a la una", "{number}", "no tengo entrenamiento"], "model": "Es a las cinco.", "hint": "Es a las ___.", "concept": "son-las-x" }
+      ]
+    },
+    {
+      "id": "u7-l2",
+      "type": "lesson",
+      "title": "Mi rutina",
+      "subtitle": "Morning and night",
+      "icon": "🌅",
+      "canDo": "I can say when I get up and go to bed",
+      "scenario": "Comparing schedules with your cousin",
+      "intro": [
+        { "en": "Early bird or night owl? Let's talk about your day." },
+        { "en": "I get up at seven:", "es": "Me levanto a las siete." },
+        { "en": "Your turn!" }
+      ],
+      "phrases": [
+        { "id": "me-levanto", "es": "Me levanto a las siete.", "en": "I get up at seven.", "pic": "⏰", "help": "Me levanto = I get up. A las + time = at that time." },
+        { "id": "me-acuesto", "es": "Me acuesto a las nueve.", "en": "I go to bed at nine.", "pic": "🛏️", "help": "Me acuesto = I go to bed." },
+        { "id": "a-que-hora", "es": "¿A qué hora te levantas?", "en": "What time do you get up?", "pic": "❓", "help": "A qué hora = at what time." }
+      ],
+      "frame": {
+        "id": "me-levanto-x",
+        "es": "Me levanto a las {x}.",
+        "en": "I get up at {x}.",
+        "help": "Swap in your wake-up time.",
+        "fillers": [
+          { "es": "seis", "en": "six", "pic": "🕕" },
+          { "es": "seis y media", "en": "six thirty", "pic": "🕡" },
+          { "es": "siete y cuarto", "en": "seven fifteen", "pic": "🕖" },
+          { "es": "ocho", "en": "eight", "pic": "🕗" }
+        ]
+      },
+      "qa": [
+        { "q": "¿A qué hora te levantas?", "qEn": "What time do you get up?", "open": true, "accept": ["me levanto a las {number}", "a las {number}", "me levanto a la una", "{number}"], "model": "Me levanto a las siete.", "hint": "Me levanto a las ___.", "concept": "me-levanto" },
+        { "q": "¿A qué hora te acuestas?", "qEn": "What time do you go to bed?", "open": true, "accept": ["me acuesto a las {number}", "a las {number}", "{number}"], "model": "Me acuesto a las nueve.", "hint": "Me acuesto a las ___.", "concept": "me-acuesto" },
+        { "q": "Pregúntale a tu primo a qué hora se levanta.", "qEn": "Ask your cousin what time he gets up.", "say": "¿A qué hora te levantas?", "concept": "a-que-hora" }
+      ]
+    },
+    {
+      "id": "u7-l3",
+      "type": "lesson",
+      "title": "Después de la escuela",
+      "subtitle": "After school",
+      "icon": "🎒",
+      "canDo": "I can say what I do after school",
+      "scenario": "Making after-school plans",
+      "intro": [
+        { "en": "School's out! What do you do next?" },
+        { "en": "After school, I play soccer:", "es": "Después de la escuela, juego fútbol." },
+        { "en": "Try it!" }
+      ],
+      "phrases": [
+        { "id": "despues-de-la-escuela", "es": "Después de la escuela, juego fútbol.", "en": "After school, I play soccer.", "pic": "⚽", "help": "Después de = after." },
+        { "id": "hago-la-tarea", "es": "Hago la tarea.", "en": "I do my homework.", "pic": "📝", "help": "Hago = I do or I make. Tarea = homework." },
+        { "id": "que-haces", "es": "¿Qué haces?", "en": "What are you doing? / What do you do?", "pic": "🤔", "help": "Haces = you do." }
+      ],
+      "frame": {
+        "id": "despues-x",
+        "es": "Después de la escuela, {x}.",
+        "en": "After school, {x}.",
+        "help": "Después de la escuela + what you do.",
+        "fillers": [
+          { "es": "hago la tarea", "en": "I do my homework", "pic": "📝", "tag": "school" },
+          { "es": "como algo", "en": "I eat something", "pic": "🍎", "tag": "food" },
+          { "es": "veo la tele", "en": "I watch TV", "pic": "📺" },
+          { "es": "entreno", "en": "I train", "pic": "🏃", "tag": "sports" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Qué haces después de la escuela?", "qEn": "What do you do after school?", "open": true, "accept": ["despues de la escuela {any}", "juego {any}", "hago {any}", "veo {any}", "como {any}", "entreno", "{any}"], "model": "Después de la escuela, juego fútbol.", "hint": "Después de la escuela, ___.", "concept": "despues-x" },
+        { "q": "¿Haces la tarea antes de jugar?", "qEn": "Do you do your homework before playing?", "open": true, "accept": ["si hago la tarea", "si", "no", "a veces", "no despues"], "model": "Sí, hago la tarea.", "hint": "Sí, hago la tarea.", "concept": "hago-la-tarea" },
+        { "q": "Pregúntale a tu amigo qué hace.", "qEn": "Ask your friend what he's doing.", "say": "¿Qué haces?", "concept": "que-haces" }
+      ]
+    },
+    {
+      "id": "u7-l4",
+      "type": "lesson",
+      "title": "Los días",
+      "subtitle": "Days of the week",
+      "icon": "📅",
+      "canDo": "I can say the days of the week and my plans",
+      "scenario": "Planning your week",
+      "intro": [
+        { "en": "Let's plan the week. Which day is game day?" },
+        { "en": "On Saturday I play soccer:", "es": "El sábado juego fútbol." },
+        { "en": "Say it!" }
+      ],
+      "phrases": [
+        { "id": "que-dia-es-hoy", "es": "¿Qué día es hoy?", "en": "What day is it today?", "pic": "📅", "help": "Día = day. Hoy = today (the H is silent: \"OY\")." },
+        { "id": "hoy-es-viernes", "es": "Hoy es viernes.", "en": "Today is Friday.", "pic": "🎉", "help": "Days aren't capitalized in Spanish!" },
+        { "id": "el-sabado-juego", "es": "El sábado juego fútbol.", "en": "On Saturday I play soccer.", "pic": "⚽", "help": "El sábado = on Saturday. No word for \"on\" needed.", "tip": "Use el before a day to mean \"on that day\": el lunes = on Monday. Los lunes = on Mondays (every week)." }
+      ],
+      "frame": {
+        "id": "hoy-es-x",
+        "es": "Hoy es {x}.",
+        "en": "Today is {x}.",
+        "help": "Hoy es + day.",
+        "fillers": [
+          { "es": "lunes", "en": "Monday", "pic": "1️⃣" },
+          { "es": "miércoles", "en": "Wednesday", "pic": "3️⃣" },
+          { "es": "sábado", "en": "Saturday", "pic": "6️⃣" },
+          { "es": "domingo", "en": "Sunday", "pic": "7️⃣" }
+        ]
+      },
+      "slots": { "day": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"] },
+      "qa": [
+        { "q": "¿Qué día es hoy?", "qEn": "What day is it today?", "open": true, "accept": ["hoy es {day}", "es {day}", "{day}"], "model": "Hoy es viernes.", "hint": "Hoy es ___.", "concept": "hoy-es-x" },
+        { "q": "¿Qué día juegas fútbol?", "qEn": "What day do you play soccer?", "open": true, "accept": ["el {day} juego futbol", "los {day} juego futbol", "el {day}", "los {day}", "{day}"], "model": "El sábado juego fútbol.", "hint": "El ___ juego fútbol.", "concept": "el-sabado-juego" },
+        { "q": "No sabes qué día es. ¿Qué preguntas?", "qEn": "You don't know what day it is. What do you ask?", "say": "¿Qué día es hoy?", "concept": "que-dia-es-hoy" }
+      ]
+    },
+    {
+      "id": "u7-l5",
+      "type": "roleplay",
+      "title": "Weekend plans",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can make weekend plans with a friend",
+      "scenario": "Your friend Nico video-calls to make plans for the weekend.",
+      "character": { "name": "Nico", "emoji": "📱", "color": "#F2B705" },
+      "start": "plans",
+      "slots": { "day": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"] },
+      "nodes": {
+        "plans": { "say": "¡Hola! ¿Qué haces el sábado?", "en": "Hi! What are you doing on Saturday?", "reply": { "accept": ["juego {any}", "voy {any}", "hago {any}", "nada", "no se", "{any}"], "model": "No sé. ¿Y tú?", "hint": "Juego ___. / No sé." }, "next": "invite" },
+        "invite": { "say": "¿Quieres jugar al fútbol en el parque?", "en": "Do you want to play soccer at the park?", "reply": { "model": "¡Sí, vamos!", "hint": "¡Sí, vamos!", "branches": [ { "accept": ["si vamos", "si", "claro", "si quiero", "vamos"], "next": "time" }, { "accept": ["ahora no", "no gracias", "no"], "next": "alt" } ] }, "next": "time" },
+        "alt": { "say": "Está bien. ¿Y videojuegos? ¿Quieres jugar?", "en": "Okay. What about video games? Want to play?", "reply": { "accept": ["si vamos", "si", "claro", "si quiero", "vamos", "bueno"], "model": "¡Sí, claro!", "hint": "¡Sí, claro!" }, "next": "time" },
+        "time": { "say": "¡Genial! ¿A qué hora?", "en": "Awesome! What time?", "reply": { "accept": ["a las {number}", "a la una", "a las {number} y media", "{number}"], "model": "A las diez.", "hint": "A las ___." }, "next": "cousin" },
+        "cousin": { "say": "Perfecto. ¿Invitamos a tu primo?", "en": "Perfect. Should we invite your cousin?", "reply": { "accept": ["si", "si claro", "claro", "si vamos", "no", "no gracias", "buena idea"], "model": "¡Sí, claro!", "hint": "¡Sí, claro!" }, "next": "end" },
+        "end": { "say": "¡Va! Nos vemos el sábado. ¡Hasta luego!", "en": "Deal! See you Saturday. See you later!", "end": true }
+      }
+    },
+    { "id": "u7-l6", "type": "review", "title": "Unit review", "subtitle": "My day", "icon": "🔁" },
+    { "id": "u7-l7", "type": "checkpoint", "title": "Final check", "subtitle": "The whole course", "icon": "🏆" }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "u2",
+  "title": "En la escuela",
+  "titleEn": "At school",
+  "icon": "🏫",
+  "color": "#2BB0A8",
+  "tags": ["school"],
+  "lessons": [
+    {
+      "id": "u2-l1",
+      "type": "lesson",
+      "title": "¿Dónde está?",
+      "subtitle": "Finding places at school",
+      "icon": "🧭",
+      "canDo": "I can ask where things are at school",
+      "scenario": "Finding your way around a new school",
+      "intro": [
+        { "en": "New school, big hallways! Let's learn to ask where things are." },
+        { "en": "Where's the bathroom?", "es": "¿Dónde está el baño?" },
+        { "en": "A super useful one. Try it!" }
+      ],
+      "phrases": [
+        { "id": "donde-esta-el-bano", "es": "¿Dónde está el baño?", "en": "Where's the bathroom?", "pic": "🚻", "help": "Dónde = where. Está = is (for places). Baño = bathroom." },
+        { "id": "esta-aqui", "es": "Está aquí.", "en": "It's here.", "pic": "📍", "help": "Aquí means here. Say it \"ah-KEE\"." },
+        { "id": "esta-alli", "es": "Está allí.", "en": "It's over there.", "pic": "👉", "help": "Allí means there. The double L sounds like Y: \"ah-YEE\"." }
+      ],
+      "frame": {
+        "id": "donde-esta-x",
+        "es": "¿Dónde está {x}?",
+        "en": "Where is {x}?",
+        "help": "Use ¿Dónde está…? to ask where any place or thing is.",
+        "fillers": [
+          { "es": "el salón", "en": "the classroom", "pic": "🏫" },
+          { "es": "la biblioteca", "en": "the library", "pic": "📚" },
+          { "es": "el gimnasio", "en": "the gym", "pic": "🏀", "tag": "sports" },
+          { "es": "la cafetería", "en": "the cafeteria", "pic": "🍎", "tag": "food" },
+          { "es": "mi lápiz", "en": "my pencil", "pic": "✏️" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Dónde está la biblioteca?", "qEn": "Where's the library?", "pic": "👉", "say": "Está allí.", "concept": "esta-alli" },
+        { "q": "¿Dónde está tu mochila?", "qEn": "Where's your backpack?", "pic": "📍", "open": true, "accept": ["esta aqui", "aqui", "esta alli", "alli", "aqui esta", "no se"], "model": "Está aquí.", "hint": "Está aquí. / Está allí.", "concept": "esta-aqui" },
+        { "q": "Necesitas el baño. ¿Qué preguntas?", "qEn": "You need the bathroom. What do you ask?", "say": "¿Dónde está el baño?", "concept": "donde-esta-el-bano" }
+      ]
+    },
+    {
+      "id": "u2-l2",
+      "type": "lesson",
+      "title": "Mi clase favorita",
+      "subtitle": "School subjects",
+      "icon": "📚",
+      "canDo": "I can talk about my favorite class",
+      "scenario": "Comparing schedules with a friend",
+      "intro": [
+        { "en": "Everybody has a favorite class. Mine is P.E., obviously!" },
+        { "en": "What's your favorite class?", "es": "¿Cuál es tu clase favorita?" },
+        { "en": "Let's practice!" }
+      ],
+      "phrases": [
+        { "id": "cual-es-tu-clase", "es": "¿Cuál es tu clase favorita?", "en": "What's your favorite class?", "pic": "❓", "help": "Cuál means which or what. Tu (no accent) means your." },
+        { "id": "mi-clase-favorita", "es": "Mi clase favorita es arte.", "en": "My favorite class is art.", "pic": "🎨", "help": "Swap arte for any class you like!" }
+      ],
+      "frame": {
+        "id": "clase-de-x",
+        "es": "Me gusta la clase de {x}.",
+        "en": "I like {x} class.",
+        "help": "La clase de + subject. Like \"the class of math\".",
+        "fillers": [
+          { "es": "matemáticas", "en": "math", "pic": "➗" },
+          { "es": "ciencias", "en": "science", "pic": "🔬" },
+          { "es": "español", "en": "Spanish", "pic": "💬" },
+          { "es": "educación física", "en": "P.E.", "pic": "🏃", "tag": "sports" },
+          { "es": "música", "en": "music", "pic": "🎵", "tag": "music" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Cuál es tu clase favorita?", "qEn": "What's your favorite class?", "open": true, "accept": ["mi clase favorita es {any}", "es {any}", "me gusta la clase de {any}", "{any}"], "model": "Mi clase favorita es educación física.", "hint": "Mi clase favorita es ___.", "concept": "mi-clase-favorita" },
+        { "q": "¿Te gusta la clase de matemáticas?", "qEn": "Do you like math class?", "pic": "➗", "open": true, "accept": ["si me gusta {any}", "si me gusta", "si", "no me gusta", "no", "mas o menos"], "model": "Sí, me gusta.", "hint": "Sí, me gusta. / No me gusta.", "concept": "clase-de-x" },
+        { "q": "Pregúntame por mi clase favorita.", "qEn": "Ask me what my favorite class is.", "say": "¿Cuál es tu clase favorita?", "concept": "cual-es-tu-clase" }
+      ]
+    },
+    {
+      "id": "u2-l3",
+      "type": "lesson",
+      "title": "Necesito…",
+      "subtitle": "Asking for what you need",
+      "icon": "🙏",
+      "canDo": "I can say what I need and borrow things politely",
+      "scenario": "Getting ready for a test in class",
+      "intro": [
+        { "en": "Test day! But you need a few things first." },
+        { "en": "I need a pencil:", "es": "Necesito un lápiz." },
+        { "en": "Let's ask politely." }
+      ],
+      "phrases": [
+        { "id": "necesito-un-lapiz", "es": "Necesito un lápiz.", "en": "I need a pencil.", "pic": "✏️", "help": "Necesito means \"I need\". It looks like the English word \"necessity\"." },
+        { "id": "me-prestas", "es": "¿Me prestas tu borrador?", "en": "Can I borrow your eraser?", "pic": "🧽", "help": "Word for word: \"Do you lend me your eraser?\" A friendly way to borrow something." },
+        { "id": "muchas-gracias", "es": "¡Muchas gracias!", "en": "Thanks a lot!", "pic": "🙏", "help": "Gracias = thanks. Muchas gracias = many thanks." }
+      ],
+      "frame": {
+        "id": "necesito-x",
+        "es": "Necesito {x}.",
+        "en": "I need {x}.",
+        "help": "Necesito + what you need.",
+        "fillers": [
+          { "es": "una hoja", "en": "a sheet of paper", "pic": "📄" },
+          { "es": "ayuda", "en": "help", "pic": "🆘" },
+          { "es": "agua", "en": "water", "pic": "💧" },
+          { "es": "un descanso", "en": "a break", "pic": "😮‍💨" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Qué necesitas?", "qEn": "What do you need?", "open": true, "accept": ["necesito {any}", "{any} por favor", "{any}"], "model": "Necesito ayuda, por favor.", "hint": "Necesito ___.", "concept": "necesito-x" },
+        { "q": "Toma, aquí está.", "qEn": "Here you go.", "open": true, "accept": ["gracias", "muchas gracias", "gracias {any}"], "model": "¡Muchas gracias!", "hint": "¡Muchas gracias!", "concept": "muchas-gracias" },
+        { "q": "No tienes borrador. ¿Qué le dices a tu amigo?", "qEn": "You don't have an eraser. What do you say to your friend?", "say": "¿Me prestas tu borrador?", "concept": "me-prestas" }
+      ]
+    },
+    {
+      "id": "u2-l4",
+      "type": "lesson",
+      "title": "¿Puedo…?",
+      "subtitle": "Asking permission",
+      "icon": "✋",
+      "canDo": "I can ask permission in class",
+      "scenario": "Asking your teacher for permission",
+      "intro": [
+        { "en": "In class, you'll need to ask permission sometimes." },
+        { "en": "May I go to the bathroom?", "es": "¿Puedo ir al baño?" },
+        { "en": "Let's practice!" }
+      ],
+      "phrases": [
+        { "id": "puedo-ir-al-bano", "es": "¿Puedo ir al baño?", "en": "May I go to the bathroom?", "pic": "🚻", "help": "Puedo means \"I can\" or \"may I\". Ir means to go.", "tip": "Al is a mash-up of a + el. Voy a el baño becomes voy al baño." },
+        { "id": "puedo-tomar-agua", "es": "¿Puedo tomar agua?", "en": "May I get a drink of water?", "pic": "💧", "help": "Tomar means to drink (or to take)." },
+        { "id": "si-claro", "es": "Sí, claro.", "en": "Yes, of course.", "pic": "✅", "help": "Claro means \"clear\". Sí, claro = sure thing!" }
+      ],
+      "frame": {
+        "id": "puedo-x",
+        "es": "¿Puedo {x}?",
+        "en": "May I {x}?",
+        "help": "¿Puedo + action? asks if you're allowed.",
+        "fillers": [
+          { "es": "jugar", "en": "play", "pic": "⚽", "tag": "sports" },
+          { "es": "sentarme aquí", "en": "sit here", "pic": "🪑" },
+          { "es": "ayudar", "en": "help", "pic": "🤝" },
+          { "es": "ir a la biblioteca", "en": "go to the library", "pic": "📚" }
+        ]
+      },
+      "qa": [
+        { "q": "Tienes sed. ¿Qué le preguntas a la maestra?", "qEn": "You're thirsty. What do you ask the teacher?", "say": "¿Puedo tomar agua?", "concept": "puedo-tomar-agua" },
+        { "q": "¿Puedes ayudarme?", "qEn": "Can you help me?", "open": true, "accept": ["si claro", "claro", "si", "claro que si", "no puedo"], "model": "¡Sí, claro!", "hint": "Sí, claro.", "concept": "si-claro" },
+        { "q": "Tus amigos juegan fútbol. ¿Qué preguntas?", "qEn": "Your friends are playing soccer. What do you ask?", "say": "¿Puedo jugar?", "concept": "puedo-x" }
+      ]
+    },
+    {
+      "id": "u2-l5",
+      "type": "roleplay",
+      "title": "New kid at school",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can introduce myself to a teacher and ask questions",
+      "scenario": "It's your first day at a new school. Your teacher, Maestra Ruiz, welcomes you.",
+      "character": { "name": "Maestra Ruiz", "emoji": "📚", "color": "#8E5CF7" },
+      "start": "hi",
+      "nodes": {
+        "hi": { "say": "¡Buenos días! Soy la maestra Ruiz. ¿Cómo te llamas?", "en": "Good morning! I'm Ms. Ruiz. What's your name?", "reply": { "accept": ["me llamo {name}", "soy {name}", "mi nombre es {name}", "{name}"], "model": "Me llamo {me}.", "hint": "Me llamo ___." }, "next": "fav" },
+        "fav": { "say": "Bienvenido, {name}. ¿Cuál es tu clase favorita?", "en": "Welcome, {name}. What's your favorite class?", "reply": { "accept": ["mi clase favorita es {any}", "es {any}", "me gusta {any}", "{any}"], "model": "Mi clase favorita es educación física.", "hint": "Mi clase favorita es ___." }, "next": "pencil" },
+        "pencil": { "say": "¡Qué bien! Vamos a escribir. ¿Tienes un lápiz?", "en": "Great! We're going to write. Do you have a pencil?", "reply": { "model": "Sí, tengo.", "hint": "Sí, tengo. / No, no tengo.", "branches": [ { "accept": ["si tengo", "si", "si tengo un lapiz", "aqui esta"], "next": "yes" }, { "accept": ["no no tengo", "no tengo", "no", "necesito un lapiz"], "next": "no" } ] }, "next": "yes" },
+        "yes": { "say": "¡Perfecto! ¿Tienes una pregunta?", "en": "Perfect! Do you have a question?", "reply": { "accept": ["donde esta {any}", "puedo {any}", "no", "no gracias", "si {any}"], "model": "¿Dónde está el baño?", "hint": "¿Dónde está ___? / ¿Puedo ___?" }, "next": "end" },
+        "no": { "say": "No hay problema. Toma, aquí tienes un lápiz.", "en": "No problem. Here, have a pencil.", "reply": { "accept": ["gracias", "muchas gracias", "gracias maestra"], "model": "¡Muchas gracias!", "hint": "¡Muchas gracias!" }, "next": "yes" },
+        "end": { "say": "¡Muy bien! ¡Que tengas un buen día!", "en": "Very good! Have a great day!", "end": true }
+      }
+    },
+    { "id": "u2-l6", "type": "review", "title": "Unit review", "subtitle": "At school", "icon": "🔁" },
+    { "id": "u2-l7", "type": "checkpoint", "title": "Check your progress", "subtitle": "Units 1–2", "icon": "🏁" }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "u6",
+  "title": "Amigos y compañeros",
+  "titleEn": "Friends and teammates",
+  "icon": "🤝",
+  "color": "#8E5CF7",
+  "tags": ["friends", "animals"],
+  "lessons": [
+    {
+      "id": "u6-l1",
+      "type": "lesson",
+      "title": "Él es mi amigo",
+      "subtitle": "Who's who",
+      "icon": "👫",
+      "canDo": "I can introduce my friends, cousins and brothers",
+      "scenario": "Introducing your crew at a birthday party",
+      "intro": [
+        { "en": "Party time! Let's introduce the people you came with." },
+        { "en": "He's my friend:", "es": "Él es mi amigo." },
+        { "en": "Your turn!" }
+      ],
+      "phrases": [
+        { "id": "el-es-mi-amigo", "es": "Él es mi amigo.", "en": "He's my friend.", "pic": "🧢", "help": "Él (with an accent) means he.", "tip": "Watch the accent! Él = he, but el = the." },
+        { "id": "ella-es-mi-prima", "es": "Ella es mi prima.", "en": "She's my cousin.", "pic": "🎀", "help": "Ella = she. Primo is a boy cousin, prima is a girl cousin." },
+        { "id": "quien-es", "es": "¿Quién es?", "en": "Who is it?", "pic": "❓", "help": "Quién = who. Sounds like \"kee-EN\"." }
+      ],
+      "frame": {
+        "id": "el-es-mi-x",
+        "es": "Él es mi {x}.",
+        "en": "He's my {x}.",
+        "help": "Él es mi + who he is to you.",
+        "fillers": [
+          { "es": "hermano", "en": "brother", "pic": "👦" },
+          { "es": "primo", "en": "cousin", "pic": "🧒" },
+          { "es": "entrenador", "en": "coach", "pic": "📣", "tag": "sports" },
+          { "es": "compañero de equipo", "en": "teammate", "pic": "👕", "tag": "sports" },
+          { "es": "maestro", "en": "teacher", "pic": "📚", "tag": "school" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Quién es él?", "qEn": "Who is he?", "pic": "🧢", "open": true, "accept": ["el es mi {any}", "es mi {any}", "mi {any}"], "model": "Él es mi primo.", "hint": "Él es mi ___.", "concept": "el-es-mi-x" },
+        { "q": "¿Tienes hermanos?", "qEn": "Do you have brothers or sisters?", "open": true, "accept": ["si tengo {number} hermanos", "tengo {number} hermanos", "si tengo {any}", "si tengo", "si", "no", "no tengo"], "model": "Sí, tengo dos hermanos.", "hint": "Sí, tengo ___ hermanos." },
+        { "q": "¿Cómo se llama tu mejor amigo?", "qEn": "What's your best friend's name?", "open": true, "accept": ["mi mejor amigo se llama {name}", "se llama {name}", "{name}"], "model": "Mi mejor amigo se llama Diego.", "hint": "Se llama ___." }
+      ]
+    },
+    {
+      "id": "u6-l2",
+      "type": "lesson",
+      "title": "¿Cómo es?",
+      "subtitle": "Describing people",
+      "icon": "😄",
+      "canDo": "I can describe my friends",
+      "scenario": "Telling someone about your best friend",
+      "intro": [
+        { "en": "Let's describe your friends. Are they fast? Funny? Tall?" },
+        { "en": "He's really fun:", "es": "Es muy divertido." },
+        { "en": "Try it!" }
+      ],
+      "phrases": [
+        { "id": "es-muy-divertido", "es": "Es muy divertido.", "en": "He's really fun.", "pic": "😄", "help": "Divertido = fun.", "tip": "Describing words change for boys and girls: divertido for a boy, divertida for a girl." },
+        { "id": "como-es", "es": "¿Cómo es?", "en": "What's he like?", "pic": "🤔", "help": "Cómo es asks what someone is like." },
+        { "id": "es-simpatica", "es": "Es simpática.", "en": "She's nice.", "pic": "😊", "help": "Simpático (boy) or simpática (girl) = nice, friendly." }
+      ],
+      "frame": {
+        "id": "mi-amigo-es-x",
+        "es": "Mi amigo es {x}.",
+        "en": "My friend is {x}.",
+        "help": "Mi amigo es + describing word.",
+        "fillers": [
+          { "es": "alto", "en": "tall", "pic": "📏" },
+          { "es": "chistoso", "en": "funny", "pic": "😂" },
+          { "es": "rápido", "en": "fast", "pic": "⚡", "tag": "sports" },
+          { "es": "inteligente", "en": "smart", "pic": "🧠" },
+          { "es": "amable", "en": "kind", "pic": "💛" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Cómo es tu mejor amigo?", "qEn": "What's your best friend like?", "open": true, "accept": ["es muy {any}", "es {any}", "mi amigo es {any}", "mi mejor amigo es {any}", "{any}"], "model": "Es muy chistoso.", "hint": "Es muy ___.", "concept": "mi-amigo-es-x" },
+        { "q": "¿Eres rápido?", "qEn": "Are you fast?", "open": true, "accept": ["si soy muy rapido", "si soy rapido", "soy {any}", "si", "no", "mas o menos"], "model": "¡Sí, soy muy rápido!", "hint": "Sí, soy rápido." },
+        { "q": "Pregunta cómo es el nuevo jugador.", "qEn": "Ask what the new player is like.", "say": "¿Cómo es?", "concept": "como-es" }
+      ]
+    },
+    {
+      "id": "u6-l3",
+      "type": "lesson",
+      "title": "Mi mascota",
+      "subtitle": "Pets",
+      "icon": "🐶",
+      "canDo": "I can talk about pets",
+      "scenario": "Showing a friend photos of pets",
+      "intro": [
+        { "en": "Who's got a pet? Let's talk about animals!" },
+        { "en": "I have a dog:", "es": "Tengo un perro." },
+        { "en": "Say it!" }
+      ],
+      "phrases": [
+        { "id": "tengo-un-perro", "es": "Tengo un perro.", "en": "I have a dog.", "pic": "🐶", "help": "Perro = dog. Roll the double R if you can: \"PEH-rro\"." },
+        { "id": "tienes-mascota", "es": "¿Tienes mascota?", "en": "Do you have a pet?", "pic": "🐾", "help": "Mascota = pet. It's also the word for a team mascot!" },
+        { "id": "se-llama", "es": "Se llama Rocky.", "en": "His name is Rocky.", "pic": "🏷️", "help": "Se llama = his/her name is. Use it for pets and people." }
+      ],
+      "frame": {
+        "id": "tengo-mascota-x",
+        "es": "Tengo {x}.",
+        "en": "I have {x}.",
+        "help": "Tengo + un / una + animal.",
+        "fillers": [
+          { "es": "un gato", "en": "a cat", "pic": "🐱", "tag": "animals" },
+          { "es": "un pez", "en": "a fish", "pic": "🐟", "tag": "animals" },
+          { "es": "una tortuga", "en": "a turtle", "pic": "🐢", "tag": "animals" },
+          { "es": "un hámster", "en": "a hamster", "pic": "🐹", "tag": "animals" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Tienes mascota?", "qEn": "Do you have a pet?", "open": true, "accept": ["si tengo {any}", "tengo {any}", "si", "no", "no tengo", "no tengo mascota"], "model": "Sí, tengo un perro.", "hint": "Sí, tengo un ___. / No, no tengo.", "concept": "tengo-mascota-x" },
+        { "q": "¿Cómo se llama tu mascota?", "qEn": "What's your pet's name?", "open": true, "accept": ["se llama {name}", "mi {any} se llama {name}", "no tengo", "{name}"], "model": "Se llama Rocky.", "hint": "Se llama ___.", "concept": "se-llama" },
+        { "q": "Pregúntale a tu amigo si tiene mascota.", "qEn": "Ask your friend if they have a pet.", "say": "¿Tienes mascota?", "concept": "tienes-mascota" }
+      ]
+    },
+    {
+      "id": "u6-l4",
+      "type": "lesson",
+      "title": "Mi equipo",
+      "subtitle": "Teammates and coaches",
+      "icon": "🏅",
+      "canDo": "I can talk about my team and teammates",
+      "scenario": "Bragging about your team",
+      "intro": [
+        { "en": "Let's talk about your team. Who's the best player?" },
+        { "en": "We're a good team:", "es": "Somos un buen equipo." },
+        { "en": "Say it proud!" }
+      ],
+      "phrases": [
+        { "id": "somos-buen-equipo", "es": "Somos un buen equipo.", "en": "We're a good team.", "pic": "🏅", "help": "Somos = we are. Buen = good (before a word)." },
+        { "id": "juega-muy-bien", "es": "Juega muy bien.", "en": "He plays really well.", "pic": "👏", "help": "Juega = he or she plays. Muy bien = really well." }
+      ],
+      "frame": {
+        "id": "x-juega-muy-bien",
+        "es": "{x} juega muy bien.",
+        "en": "{x} plays really well.",
+        "help": "Person + juega muy bien.",
+        "fillers": [
+          { "es": "Mi primo", "en": "My cousin", "pic": "🧒" },
+          { "es": "Mi amiga", "en": "My friend (girl)", "pic": "👧" },
+          { "es": "Mi hermano", "en": "My brother", "pic": "👦" },
+          { "es": "El portero", "en": "The goalie", "pic": "🧤", "tag": "sports" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Quién juega muy bien en tu equipo?", "qEn": "Who plays really well on your team?", "open": true, "accept": ["{any} juega muy bien", "mi {any}", "{name}"], "model": "Mi amigo Diego juega muy bien.", "hint": "___ juega muy bien.", "concept": "x-juega-muy-bien" },
+        { "q": "¿Son un buen equipo?", "qEn": "Are you a good team?", "open": true, "accept": ["si somos un buen equipo", "somos un buen equipo", "si", "si somos {any}", "mas o menos", "no"], "model": "¡Sí, somos un buen equipo!", "hint": "Sí, somos un buen equipo.", "concept": "somos-buen-equipo" },
+        { "q": "¿Tu entrenador es estricto?", "qEn": "Is your coach strict?", "open": true, "accept": ["si es {any}", "si", "no", "no es {any}", "es {any}", "un poco", "mas o menos"], "model": "Un poco, pero es muy amable.", "hint": "Sí. / No. / Un poco." }
+      ]
+    },
+    {
+      "id": "u6-l5",
+      "type": "roleplay",
+      "title": "A new player",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can describe a friend to a coach",
+      "scenario": "Coach Ana is looking for new players. Tell her about a friend who wants to join.",
+      "character": { "name": "Entrenadora Ana", "emoji": "📣", "color": "#8E5CF7" },
+      "start": "ask",
+      "slots": { "pos": ["portero", "defensa", "medio", "delantero", "mediocampista"] },
+      "nodes": {
+        "ask": { "say": "¡Hola! Soy la entrenadora Ana. ¿Tienes un amigo que quiere jugar?", "en": "Hi! I'm Coach Ana. Do you have a friend who wants to play?", "reply": { "model": "¡Sí, tengo un amigo!", "hint": "Sí. / No.", "branches": [ { "accept": ["si", "si tengo un amigo", "si tengo", "claro", "si mi amigo"], "next": "name" }, { "accept": ["no", "no tengo", "no se"], "next": "other" } ] }, "next": "name" },
+        "other": { "say": "¡No pasa nada! ¿Y un primo o un hermano?", "en": "No problem! What about a cousin or a brother?", "reply": { "accept": ["si", "si mi primo", "si mi hermano", "mi primo", "mi hermano", "si tengo {any}"], "model": "Sí, mi primo.", "hint": "Sí, mi primo." }, "next": "name" },
+        "name": { "say": "¡Qué bien! ¿Cómo se llama?", "en": "Great! What's their name?", "reply": { "accept": ["se llama {name}", "mi amigo se llama {name}", "{name}"], "model": "Se llama Diego.", "hint": "Se llama ___." }, "next": "like" },
+        "like": { "say": "¿Cómo es {name}?", "en": "What is {name} like?", "reply": { "accept": ["es muy {any}", "es {any}", "{any}"], "model": "Es muy rápido y amable.", "hint": "Es muy ___." }, "next": "age" },
+        "age": { "say": "¿Cuántos años tiene?", "en": "How old is he?", "reply": { "accept": ["tiene {number} años", "tiene {number}", "{number} años", "{number}"], "model": "Tiene once años.", "hint": "Tiene ___ años." }, "next": "pos" },
+        "pos": { "say": "¿Y de qué juega?", "en": "And what position does he play?", "reply": { "accept": ["juega de {pos}", "de {pos}", "es {pos}", "{pos}", "no se"], "model": "Juega de defensa.", "hint": "Juega de ___." }, "next": "end" },
+        "end": { "say": "¡Perfecto! Dile que venga el sábado. ¡Gracias!", "en": "Perfect! Tell him to come on Saturday. Thanks!", "end": true }
+      }
+    },
+    { "id": "u6-l6", "type": "review", "title": "Unit review", "subtitle": "Friends and teammates", "icon": "🔁" }
+  ]
+}

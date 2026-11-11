@@ -1,0 +1,177 @@
+{
+  "id": "u3",
+  "title": "Deportes y juegos",
+  "titleEn": "Sports and games",
+  "icon": "⚽",
+  "color": "#20B26B",
+  "tags": ["sports", "games"],
+  "lessons": [
+    {
+      "id": "u3-l1",
+      "type": "lesson",
+      "title": "¿Quieres jugar?",
+      "subtitle": "Inviting friends to play",
+      "icon": "🙌",
+      "canDo": "I can ask someone to play soccer",
+      "scenario": "Recess is starting and you have a ball",
+      "intro": [
+        { "en": "Recess! You've got a ball. Let's invite some friends." },
+        { "en": "Do you want to play soccer?", "es": "¿Quieres jugar al fútbol?" },
+        { "en": "Your turn. Ask it!" }
+      ],
+      "phrases": [
+        { "id": "quieres-jugar-futbol", "es": "¿Quieres jugar al fútbol?", "en": "Do you want to play soccer?", "pic": "⚽", "help": "Quieres = you want. Jugar = to play.", "tip": "In Mexico you can say jugar al fútbol or just jugar fútbol. Both are fine!" },
+        { "id": "si-vamos", "es": "¡Sí, vamos!", "en": "Yes, let's go!", "pic": "🙌", "help": "Vamos means \"let's go\". Say it with energy!" },
+        { "id": "ahora-no", "es": "Ahora no, gracias.", "en": "Not now, thanks.", "pic": "✋", "help": "A polite no. Ahora means now." }
+      ],
+      "frame": {
+        "id": "quieres-jugar-x",
+        "es": "¿Quieres jugar {x}?",
+        "en": "Do you want to play {x}?",
+        "help": "¿Quieres jugar + game? works for any game.",
+        "fillers": [
+          { "es": "al básquetbol", "en": "basketball", "pic": "🏀", "tag": "sports" },
+          { "es": "videojuegos", "en": "video games", "pic": "🎮", "tag": "games" },
+          { "es": "a las escondidas", "en": "hide-and-seek", "pic": "🙈", "tag": "games" },
+          { "es": "al béisbol", "en": "baseball", "pic": "⚾", "tag": "sports" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Quieres jugar al fútbol?", "qEn": "Do you want to play soccer?", "open": true, "accept": ["si vamos", "si", "claro", "si quiero", "vamos", "ahora no", "ahora no gracias", "no gracias", "no"], "model": "¡Sí, vamos!", "hint": "¡Sí, vamos!", "concept": "si-vamos" },
+        { "q": "¿Quieres jugar videojuegos?", "qEn": "Do you want to play video games?", "pic": "🎮", "open": true, "accept": ["si vamos", "si", "claro", "si quiero", "ahora no", "ahora no gracias", "no gracias", "no"], "model": "Ahora no, gracias.", "hint": "¡Sí, vamos! / Ahora no, gracias.", "concept": "ahora-no" },
+        { "q": "Invita a tu amigo a jugar al básquetbol.", "qEn": "Invite your friend to play basketball.", "pic": "🏀", "say": "¿Quieres jugar al básquetbol?", "concept": "quieres-jugar-x" }
+      ]
+    },
+    {
+      "id": "u3-l2",
+      "type": "lesson",
+      "title": "En el equipo",
+      "subtitle": "Teams and positions",
+      "icon": "🧤",
+      "canDo": "I can say what team position I play",
+      "scenario": "Picking positions before a game",
+      "intro": [
+        { "en": "Before the game, everyone picks a position." },
+        { "en": "I'm the goalie:", "es": "Soy portero." },
+        { "en": "Let's find your spot on the team!" }
+      ],
+      "phrases": [
+        { "id": "juego-en-un-equipo", "es": "Juego en un equipo.", "en": "I play on a team.", "pic": "👕", "help": "Juego = I play. Equipo = team." },
+        { "id": "soy-portero", "es": "Soy portero.", "en": "I'm the goalie.", "pic": "🧤", "help": "The portero guards the portería (the goal)." },
+        { "id": "de-que-juegas", "es": "¿De qué juegas?", "en": "What position do you play?", "pic": "❓", "help": "Literally \"Of what do you play?\" Players use it to ask about positions." }
+      ],
+      "frame": {
+        "id": "juego-de-x",
+        "es": "Juego de {x}.",
+        "en": "I play {x}.",
+        "help": "Juego de + position.",
+        "fillers": [
+          { "es": "portero", "en": "goalie", "pic": "🧤" },
+          { "es": "defensa", "en": "defense", "pic": "🛡️" },
+          { "es": "medio", "en": "midfield", "pic": "🎯" },
+          { "es": "delantero", "en": "forward", "pic": "⚡" }
+        ]
+      },
+      "slots": { "pos": ["portero", "defensa", "medio", "delantero", "mediocampista", "lateral"] },
+      "qa": [
+        { "q": "¿Juegas en un equipo?", "qEn": "Do you play on a team?", "open": true, "accept": ["si juego en un equipo", "juego en un equipo", "si juego en {any}", "si", "no", "no juego"], "model": "Sí, juego en un equipo.", "hint": "Sí, juego en un equipo.", "concept": "juego-en-un-equipo" },
+        { "q": "¿De qué juegas?", "qEn": "What position do you play?", "open": true, "accept": ["juego de {pos}", "soy {pos}", "de {pos}", "{pos}"], "model": "Juego de delantero.", "hint": "Juego de ___.", "concept": "juego-de-x" },
+        { "q": "¿Cómo se llama tu equipo?", "qEn": "What's your team called?", "open": true, "accept": ["mi equipo se llama {any}", "se llama {any}", "los {any}", "{any}"], "model": "Mi equipo se llama Los Jaguares.", "hint": "Mi equipo se llama ___." }
+      ]
+    },
+    {
+      "id": "u3-l3",
+      "type": "lesson",
+      "title": "Lucha libre",
+      "subtitle": "Mexican wrestling",
+      "icon": "🤼",
+      "canDo": "I can talk about lucha libre and describe a wrestler",
+      "scenario": "Watching a lucha libre match with your cousin",
+      "intro": [
+        { "en": "Lucha libre is Mexico's high-flying wrestling, with colorful masks!" },
+        { "en": "What a great move!", "es": "¡Qué buena llave!" },
+        { "en": "Let's cheer like a fan." }
+      ],
+      "phrases": [
+        { "id": "me-gusta-la-lucha", "es": "Me gusta la lucha libre.", "en": "I like lucha libre.", "pic": "🤼", "help": "Lucha libre means \"free fighting\". Wrestlers are called luchadores." },
+        { "id": "que-buena-llave", "es": "¡Qué buena llave!", "en": "What a great move!", "pic": "🔥", "help": "A llave is a wrestling hold. Funny fact: llave also means key!" },
+        { "id": "usa-mascara", "es": "El luchador usa máscara.", "en": "The wrestler wears a mask.", "pic": "🎭", "help": "Usa = wears (or uses). Máscara = mask." }
+      ],
+      "frame": {
+        "id": "es-muy-x",
+        "es": "Es muy {x}.",
+        "en": "He's really {x}.",
+        "help": "Es muy + describing word. Muy means very.",
+        "fillers": [
+          { "es": "fuerte", "en": "strong", "pic": "💪" },
+          { "es": "rápido", "en": "fast", "pic": "⚡" },
+          { "es": "valiente", "en": "brave", "pic": "🦁" },
+          { "es": "alto", "en": "tall", "pic": "📏" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Te gusta la lucha libre?", "qEn": "Do you like lucha libre?", "open": true, "accept": ["si me gusta {any}", "si me gusta", "me gusta la lucha libre", "si", "no me gusta", "no"], "model": "¡Sí, me gusta la lucha libre!", "hint": "Sí, me gusta.", "concept": "me-gusta-la-lucha" },
+        { "q": "¿Cómo es tu luchador favorito?", "qEn": "What's your favorite wrestler like?", "open": true, "accept": ["es muy {any}", "es {any}", "muy {any}", "{any}"], "model": "Es muy fuerte y rápido.", "hint": "Es muy ___.", "concept": "es-muy-x" },
+        { "q": "¡Mira esa llave!", "qEn": "Look at that move!", "pic": "🤼", "say": "¡Qué buena llave!", "concept": "que-buena-llave" }
+      ]
+    },
+    {
+      "id": "u3-l4",
+      "type": "lesson",
+      "title": "¡Gol!",
+      "subtitle": "Scores and results",
+      "icon": "🥅",
+      "canDo": "I can talk about the score of a game",
+      "scenario": "Keeping score during a big game",
+      "intro": [
+        { "en": "Big game today! Let's learn how to talk about the score." },
+        { "en": "When the ball goes in, shout:", "es": "¡Gol!" },
+        { "en": "Go ahead, shout it!" }
+      ],
+      "phrases": [
+        { "id": "gol", "es": "¡Gol!", "en": "Goal!", "pic": "🥅", "help": "Make it as long as you want: ¡Gooool!" },
+        { "id": "ganamos", "es": "¡Ganamos!", "en": "We won!", "pic": "🏆", "help": "Ganar = to win. Ganamos = we won." },
+        { "id": "empatamos", "es": "Empatamos.", "en": "We tied.", "pic": "🤝", "help": "An empate is a tie game." },
+        { "id": "vamos-dos-a-uno", "es": "Vamos dos a uno.", "en": "We're up two to one.", "pic": "📊", "help": "Vamos here means \"we're at\". Say the scores with \"a\" in the middle." }
+      ],
+      "frame": {
+        "id": "marcador-x",
+        "es": "El marcador es {x}.",
+        "en": "The score is {x}.",
+        "help": "Marcador = scoreboard. Numbers go with \"a\": tres a uno = 3–1.",
+        "fillers": [
+          { "es": "uno a cero", "en": "one to nothing", "pic": "1️⃣" },
+          { "es": "dos a dos", "en": "two to two", "pic": "2️⃣" },
+          { "es": "tres a uno", "en": "three to one", "pic": "3️⃣" },
+          { "es": "cero a cero", "en": "nothing to nothing", "pic": "0️⃣" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Cómo va el partido?", "qEn": "How's the game going?", "pic": "📊", "open": true, "accept": ["vamos {number} a {number}", "{number} a {number}", "el marcador es {number} a {number}", "vamos ganando", "ganamos"], "model": "Vamos dos a uno.", "hint": "Vamos ___ a ___.", "concept": "vamos-dos-a-uno" },
+        { "q": "¿Quién ganó?", "qEn": "Who won?", "open": true, "accept": ["ganamos", "empatamos", "perdimos", "gano {any}"], "model": "¡Ganamos!", "hint": "¡Ganamos! / Empatamos.", "concept": "ganamos" },
+        { "q": "¡Metiste un gol! ¿Qué gritas?", "qEn": "You scored! What do you shout?", "pic": "⚽", "say": "¡Gol!", "concept": "gol" }
+      ]
+    },
+    {
+      "id": "u3-l5",
+      "type": "roleplay",
+      "title": "Pickup game",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can join a pickup soccer game",
+      "scenario": "You're at the park. A kid named Diego is getting a soccer game going.",
+      "character": { "name": "Diego", "emoji": "🥅", "color": "#20B26B" },
+      "start": "invite",
+      "slots": { "pos": ["portero", "defensa", "medio", "delantero", "mediocampista"] },
+      "nodes": {
+        "invite": { "say": "¡Hola! ¿Quieres jugar al fútbol con nosotros?", "en": "Hi! Do you want to play soccer with us?", "reply": { "model": "¡Sí, vamos!", "hint": "¡Sí, vamos!", "branches": [ { "accept": ["si vamos", "si", "claro", "si quiero", "vamos"], "next": "pos" }, { "accept": ["ahora no", "no gracias", "no"], "next": "sure" } ] }, "next": "pos" },
+        "sure": { "say": "¿Seguro? ¡Va a estar muy divertido! ¿Quieres jugar?", "en": "Are you sure? It's going to be really fun! Want to play?", "reply": { "accept": ["si vamos", "si", "claro", "bueno", "esta bien", "vamos"], "model": "Bueno, ¡sí, vamos!", "hint": "¡Sí, vamos!" }, "next": "pos" },
+        "pos": { "say": "¡Genial! ¿De qué juegas?", "en": "Awesome! What position do you play?", "reply": { "accept": ["juego de {pos}", "soy {pos}", "de {pos}", "{pos}"], "model": "Juego de delantero.", "hint": "Juego de ___." }, "next": "score" },
+        "score": { "say": "¡Perfecto! … ¡Gol! ¡Qué buen pase! ¿Cómo va el partido?", "en": "Perfect! … Goal! What a great pass! How's the game going?", "reply": { "accept": ["vamos {number} a {number}", "{number} a {number}", "el marcador es {number} a {number}", "vamos ganando", "ganamos"], "model": "Vamos dos a uno.", "hint": "Vamos ___ a ___." }, "next": "again" },
+        "again": { "say": "¡Ganamos! ¡Qué buen partido! ¿Quieres jugar mañana?", "en": "We won! What a great game! Want to play tomorrow?", "reply": { "accept": ["si vamos", "si", "claro", "si quiero", "ahora no", "no gracias", "no"], "model": "¡Sí! ¡Hasta mañana!", "hint": "¡Sí, vamos!" }, "next": "end" },
+        "end": { "say": "¡Va! ¡Hasta mañana, crack!", "en": "Deal! See you tomorrow, superstar!", "end": true }
+      }
+    },
+    { "id": "u3-l6", "type": "review", "title": "Unit review", "subtitle": "Sports and games", "icon": "🔁" }
+  ]
+}

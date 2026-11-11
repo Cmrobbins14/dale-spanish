@@ -1,0 +1,136 @@
+{
+  "id": "u5",
+  "title": "Por la ciudad",
+  "titleEn": "Around town",
+  "icon": "🏙️",
+  "color": "#5B8CFF",
+  "tags": ["travel"],
+  "lessons": [
+    {
+      "id": "u5-l1",
+      "type": "lesson",
+      "title": "¿Hay un parque?",
+      "subtitle": "Places in town",
+      "icon": "🌳",
+      "canDo": "I can ask about places nearby",
+      "scenario": "Exploring a new neighborhood",
+      "intro": [
+        { "en": "Let's explore the neighborhood!" },
+        { "en": "Is there a park nearby?", "es": "¿Hay un parque cerca?" },
+        { "en": "Your turn to ask." }
+      ],
+      "phrases": [
+        { "id": "hay-un-parque-cerca", "es": "¿Hay un parque cerca?", "en": "Is there a park nearby?", "pic": "🌳", "help": "Hay (sounds like \"eye\") means there is or there are. Cerca = close by." },
+        { "id": "esta-cerca", "es": "Está cerca.", "en": "It's close.", "pic": "📍", "help": "Cerca = near." },
+        { "id": "esta-lejos", "es": "Está lejos.", "en": "It's far.", "pic": "🛣️", "help": "Lejos = far. The J sounds like a breathy H: \"LEH-hos\"." }
+      ],
+      "frame": {
+        "id": "hay-x-cerca",
+        "es": "¿Hay {x} cerca?",
+        "en": "Is there {x} nearby?",
+        "help": "¿Hay + place + cerca? asks what's close.",
+        "fillers": [
+          { "es": "una tienda", "en": "a store", "pic": "🏪" },
+          { "es": "un estadio", "en": "a stadium", "pic": "🏟️", "tag": "sports" },
+          { "es": "una cancha", "en": "a sports field", "pic": "🥅", "tag": "sports" },
+          { "es": "una biblioteca", "en": "a library", "pic": "📚" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Dónde está el parque?", "qEn": "Where's the park?", "open": true, "accept": ["esta cerca", "esta lejos", "esta alli", "cerca", "lejos", "alli", "no se"], "model": "Está cerca.", "hint": "Está cerca. / Está lejos.", "concept": "esta-cerca" },
+        { "q": "Necesitas agua. Pregunta si hay una tienda cerca.", "qEn": "You need water. Ask if there's a store nearby.", "pic": "🏪", "say": "¿Hay una tienda cerca?", "concept": "hay-x-cerca" },
+        { "q": "¿El estadio está cerca o lejos?", "qEn": "Is the stadium close or far?", "pic": "🛣️", "open": true, "accept": ["esta lejos", "esta cerca", "lejos", "cerca", "no se"], "model": "Está lejos.", "hint": "Está lejos.", "concept": "esta-lejos" }
+      ]
+    },
+    {
+      "id": "u5-l2",
+      "type": "lesson",
+      "title": "Voy al parque",
+      "subtitle": "Where you're going",
+      "icon": "🚲",
+      "canDo": "I can say where I'm going",
+      "scenario": "Heading out on a Saturday",
+      "intro": [
+        { "en": "It's Saturday! Where are you headed?" },
+        { "en": "I'm going to the park:", "es": "Voy al parque." },
+        { "en": "Say it!" }
+      ],
+      "phrases": [
+        { "id": "voy-al-parque", "es": "Voy al parque.", "en": "I'm going to the park.", "pic": "🌳", "help": "Voy = I'm going.", "tip": "A + el join up to make al: voy al parque. With la they stay apart: voy a la tienda." },
+        { "id": "adonde-vas", "es": "¿Adónde vas?", "en": "Where are you going?", "pic": "🧭", "help": "Adónde = to where. Vas = you go." }
+      ],
+      "frame": {
+        "id": "voy-x",
+        "es": "Voy {x}.",
+        "en": "I'm going {x}.",
+        "help": "Voy + al / a la + place.",
+        "fillers": [
+          { "es": "a la tienda", "en": "to the store", "pic": "🏪" },
+          { "es": "al estadio", "en": "to the stadium", "pic": "🏟️", "tag": "sports" },
+          { "es": "a la escuela", "en": "to school", "pic": "🏫", "tag": "school" },
+          { "es": "a la cancha", "en": "to the field", "pic": "🥅", "tag": "sports" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Adónde vas?", "qEn": "Where are you going?", "open": true, "accept": ["voy {any}", "al {any}", "a la {any}", "{any}"], "model": "Voy al parque.", "hint": "Voy al ___.", "concept": "voy-x" },
+        { "q": "¿Vas al estadio hoy?", "qEn": "Are you going to the stadium today?", "pic": "🏟️", "open": true, "accept": ["si voy al estadio", "si voy", "si", "no", "no voy", "hoy no"], "model": "¡Sí, voy al estadio!", "hint": "Sí, voy. / No, hoy no.", "concept": "voy-x" },
+        { "q": "Pregúntale a tu amigo adónde va.", "qEn": "Ask your friend where he's going.", "say": "¿Adónde vas?", "concept": "adonde-vas" }
+      ]
+    },
+    {
+      "id": "u5-l3",
+      "type": "lesson",
+      "title": "A la derecha",
+      "subtitle": "Giving directions",
+      "icon": "➡️",
+      "canDo": "I can understand and give simple directions",
+      "scenario": "Helping a visitor find the stadium",
+      "intro": [
+        { "en": "Someone's lost! Let's learn to give directions." },
+        { "en": "Turn right:", "es": "Dobla a la derecha." },
+        { "en": "Point and say it!" }
+      ],
+      "phrases": [
+        { "id": "dobla-derecha", "es": "Dobla a la derecha.", "en": "Turn right.", "pic": "➡️", "help": "Dobla = turn. Derecha = right." },
+        { "id": "dobla-izquierda", "es": "Dobla a la izquierda.", "en": "Turn left.", "pic": "⬅️", "help": "Izquierda = left. Sounds like \"ees-key-AIR-dah\"." },
+        { "id": "sigue-derecho", "es": "Sigue derecho.", "en": "Go straight.", "pic": "⬆️", "help": "Careful! Derecho = straight ahead, but derecha = right." }
+      ],
+      "frame": {
+        "id": "esta-x-direccion",
+        "es": "Está {x}.",
+        "en": "It's {x}.",
+        "help": "Está + where it is.",
+        "fillers": [
+          { "es": "a la derecha", "en": "on the right", "pic": "➡️" },
+          { "es": "a la izquierda", "en": "on the left", "pic": "⬅️" },
+          { "es": "enfrente", "en": "across the street", "pic": "↔️" },
+          { "es": "al lado del parque", "en": "next to the park", "pic": "🌳" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Dónde está la tienda?", "qEn": "Where's the store?", "pic": "➡️", "say": "Está a la derecha.", "concept": "esta-x-direccion" },
+        { "q": "¿Cómo llego al estadio?", "qEn": "How do I get to the stadium?", "open": true, "accept": ["sigue derecho", "dobla a la derecha", "dobla a la izquierda", "esta a la {any}", "sigue derecho y dobla a la {any}"], "model": "Sigue derecho y dobla a la izquierda.", "hint": "Sigue derecho. / Dobla a la ___.", "concept": "sigue-derecho" },
+        { "q": "¡Gracias por la ayuda!", "qEn": "Thanks for the help!", "open": true, "accept": ["de nada", "por nada", "de nada adios", "con gusto"], "model": "¡De nada!", "hint": "¡De nada!" }
+      ]
+    },
+    {
+      "id": "u5-l4",
+      "type": "roleplay",
+      "title": "Find the stadium",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can ask for directions in town",
+      "scenario": "You and your cousin Vale are going to a big game, but you're not sure where the stadium is.",
+      "character": { "name": "Vale", "emoji": "🧭", "color": "#5B8CFF" },
+      "start": "where",
+      "nodes": {
+        "where": { "say": "¡Hola, primo! ¿Adónde vamos hoy?", "en": "Hi, cousin! Where are we going today?", "reply": { "accept": ["vamos al estadio", "al estadio", "voy al estadio", "vamos {any}", "al {any}", "{any}"], "model": "Vamos al estadio.", "hint": "Vamos al ___." }, "next": "lost" },
+        "lost": { "say": "¡Sí! Pero… ¿dónde está? Pregúntale a la señora.", "en": "Yes! But… where is it? Ask the lady.", "reply": { "accept": ["donde esta el estadio", "donde esta {any}", "hay un estadio cerca", "perdon donde esta el estadio"], "model": "Perdón, ¿dónde está el estadio?", "hint": "¿Dónde está el estadio?" }, "next": "directions" },
+        "directions": { "say": "Sigue derecho y dobla a la izquierda. ¿Está bien?", "en": "Go straight and turn left. Okay?", "reply": { "accept": ["si gracias", "gracias", "muchas gracias", "si", "esta bien", "si muchas gracias"], "model": "Sí, ¡muchas gracias!", "hint": "¡Muchas gracias!" }, "next": "far" },
+        "far": { "say": "¿Y está cerca o lejos?", "en": "And is it close or far?", "reply": { "accept": ["esta cerca", "cerca", "esta lejos", "lejos", "no se"], "model": "Está cerca.", "hint": "Está cerca. / Está lejos." }, "next": "end" },
+        "end": { "say": "¡Vamos! ¡El partido empieza pronto!", "en": "Let's go! The game starts soon!", "end": true }
+      }
+    },
+    { "id": "u5-l5", "type": "review", "title": "Unit review", "subtitle": "Around town", "icon": "🔁" }
+  ]
+}

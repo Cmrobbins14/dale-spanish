@@ -1,0 +1,176 @@
+{
+  "id": "u4",
+  "title": "Comida y botanas",
+  "titleEn": "Food and snacks",
+  "icon": "🌮",
+  "color": "#FF5A5F",
+  "tags": ["food"],
+  "lessons": [
+    {
+      "id": "u4-l1",
+      "type": "lesson",
+      "title": "Tengo hambre",
+      "subtitle": "How you feel",
+      "icon": "😋",
+      "canDo": "I can say I'm hungry, thirsty, hot or cold",
+      "scenario": "After a long practice",
+      "intro": [
+        { "en": "Practice is over and you're starving!" },
+        { "en": "I'm hungry:", "es": "Tengo hambre." },
+        { "en": "Say it like you mean it!" }
+      ],
+      "phrases": [
+        { "id": "tengo-hambre", "es": "Tengo hambre.", "en": "I'm hungry.", "pic": "😋", "help": "Literally \"I have hunger.\" The H in hambre is silent.", "tip": "Spanish uses tengo (I have) for feelings like hunger, thirst, heat and cold." },
+        { "id": "tengo-sed", "es": "Tengo sed.", "en": "I'm thirsty.", "pic": "🥤", "help": "Literally \"I have thirst.\"" },
+        { "id": "tienes-hambre", "es": "¿Tienes hambre?", "en": "Are you hungry?", "pic": "🤔", "help": "Turn tengo into tienes to ask someone else." }
+      ],
+      "frame": {
+        "id": "tengo-feeling-x",
+        "es": "Tengo {x}.",
+        "en": "I'm {x}.",
+        "help": "Tengo + feeling: hambre, sed, calor, frío, sueño.",
+        "fillers": [
+          { "es": "calor", "en": "hot", "pic": "🥵" },
+          { "es": "frío", "en": "cold", "pic": "🥶" },
+          { "es": "sueño", "en": "sleepy", "pic": "😴" },
+          { "es": "mucha hambre", "en": "really hungry", "pic": "🍽️", "tag": "food" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Tienes hambre?", "qEn": "Are you hungry?", "open": true, "accept": ["si tengo hambre", "si tengo mucha hambre", "tengo hambre", "si", "no", "no tengo hambre"], "model": "¡Sí, tengo mucha hambre!", "hint": "Sí, tengo hambre.", "concept": "tengo-hambre" },
+        { "q": "Hace mucho sol. ¿Tienes calor?", "qEn": "It's really sunny. Are you hot?", "pic": "☀️", "open": true, "accept": ["si tengo calor", "tengo calor", "si", "no", "no tengo calor"], "model": "Sí, tengo calor.", "hint": "Sí, tengo calor.", "concept": "tengo-feeling-x" },
+        { "q": "Corriste mucho. ¿Qué dices?", "qEn": "You ran a lot. What do you say?", "pic": "🥤", "say": "Tengo sed.", "concept": "tengo-sed" }
+      ]
+    },
+    {
+      "id": "u4-l2",
+      "type": "lesson",
+      "title": "Quiero…, por favor",
+      "subtitle": "Ordering food",
+      "icon": "🧾",
+      "canDo": "I can order food politely",
+      "scenario": "Ordering at a food stand",
+      "intro": [
+        { "en": "Let's get some food! In Mexico, street food stands are the best." },
+        { "en": "I want a taco, please:", "es": "Quiero un taco, por favor." },
+        { "en": "Your turn to order!" }
+      ],
+      "phrases": [
+        { "id": "quiero-un-taco", "es": "Quiero un taco, por favor.", "en": "I want a taco, please.", "pic": "🌮", "help": "Quiero = I want. Por favor = please. Always add por favor!" },
+        { "id": "que-quieres", "es": "¿Qué quieres?", "en": "What do you want?", "pic": "❓", "help": "Ask a friend what they want to eat." }
+      ],
+      "frame": {
+        "id": "quiero-x",
+        "es": "Quiero {x}, por favor.",
+        "en": "I want {x}, please.",
+        "help": "Quiero + food + por favor.",
+        "fillers": [
+          { "es": "una quesadilla", "en": "a quesadilla", "pic": "🧀", "tag": "food" },
+          { "es": "unos tacos", "en": "some tacos", "pic": "🌮", "tag": "food" },
+          { "es": "un elote", "en": "corn on the cob", "pic": "🌽", "tag": "food" },
+          { "es": "una torta", "en": "a sandwich", "pic": "🥪", "tag": "food" },
+          { "es": "un agua fresca", "en": "a fruit drink", "pic": "🍹", "tag": "food" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Qué quieres de comer?", "qEn": "What do you want to eat?", "open": true, "accept": ["quiero {any} por favor", "quiero {any}", "{any} por favor", "{any}"], "model": "Quiero unos tacos, por favor.", "hint": "Quiero ___, por favor.", "concept": "quiero-x" },
+        { "q": "¿Y para tomar?", "qEn": "And to drink?", "open": true, "accept": ["quiero {any} por favor", "quiero {any}", "{any} por favor", "{any}"], "model": "Quiero un agua fresca, por favor.", "hint": "Quiero ___, por favor.", "concept": "quiero-x" },
+        { "q": "¿Algo más?", "qEn": "Anything else?", "open": true, "accept": ["no gracias", "eso es todo", "no", "si quiero {any}", "si {any}"], "model": "No, gracias. Eso es todo.", "hint": "No, gracias." }
+      ]
+    },
+    {
+      "id": "u4-l3",
+      "type": "lesson",
+      "title": "¿Cuánto cuesta?",
+      "subtitle": "Prices",
+      "icon": "🪙",
+      "canDo": "I can ask how much something costs",
+      "scenario": "Buying snacks with your own money",
+      "intro": [
+        { "en": "Time to pay! In Mexico, money is counted in pesos." },
+        { "en": "How much is it?", "es": "¿Cuánto cuesta?" },
+        { "en": "Let's ask!" }
+      ],
+      "phrases": [
+        { "id": "cuanto-cuesta", "es": "¿Cuánto cuesta?", "en": "How much is it?", "pic": "🏷️", "help": "Cuánto = how much. Cuesta = it costs." },
+        { "id": "cuesta-veinte", "es": "Cuesta veinte pesos.", "en": "It costs twenty pesos.", "pic": "💵", "help": "Cuesta + number + pesos." },
+        { "id": "aqui-tiene", "es": "Aquí tiene.", "en": "Here you go.", "pic": "🤲", "help": "A polite way to hand someone money or something they asked for." }
+      ],
+      "frame": {
+        "id": "cuesta-x-pesos",
+        "es": "Cuesta {x} pesos.",
+        "en": "It costs {x} pesos.",
+        "help": "Swap in any number.",
+        "fillers": [
+          { "es": "diez", "en": "ten", "pic": "🔟" },
+          { "es": "quince", "en": "fifteen", "pic": "🪙" },
+          { "es": "treinta", "en": "thirty", "pic": "💵" },
+          { "es": "cincuenta", "en": "fifty", "pic": "💰" }
+        ]
+      },
+      "qa": [
+        { "q": "El taco cuesta quince pesos. ¿Cuánto cuesta?", "qEn": "The taco costs 15 pesos. How much is it?", "pic": "🌮", "open": true, "accept": ["cuesta quince pesos", "quince pesos", "quince", "cuesta quince"], "model": "Cuesta quince pesos.", "hint": "Cuesta ___ pesos.", "concept": "cuesta-x-pesos" },
+        { "q": "Quieres saber el precio. ¿Qué preguntas?", "qEn": "You want to know the price. What do you ask?", "pic": "🏷️", "say": "¿Cuánto cuesta?", "concept": "cuanto-cuesta" },
+        { "q": "Son treinta pesos.", "qEn": "That's thirty pesos.", "open": true, "accept": ["aqui tiene", "aqui esta", "gracias", "aqui tiene gracias", "toma"], "model": "Aquí tiene. ¡Gracias!", "hint": "Aquí tiene.", "concept": "aqui-tiene" }
+      ]
+    },
+    {
+      "id": "u4-l4",
+      "type": "lesson",
+      "title": "¡Está rico!",
+      "subtitle": "Food you love",
+      "icon": "😍",
+      "canDo": "I can say what food I love and if it's tasty",
+      "scenario": "Trying new snacks with your friends",
+      "intro": [
+        { "en": "Let's taste some snacks and say what we think." },
+        { "en": "It's really tasty!", "es": "¡Está muy rico!" },
+        { "en": "Try it!" }
+      ],
+      "phrases": [
+        { "id": "esta-muy-rico", "es": "¡Está muy rico!", "en": "It's really tasty!", "pic": "😋", "help": "Rico means tasty when you talk about food." },
+        { "id": "me-encanta", "es": "¡Me encanta!", "en": "I love it!", "pic": "😍", "help": "Me encanta is stronger than me gusta." },
+        { "id": "no-me-gusta-lo-picante", "es": "No me gusta lo picante.", "en": "I don't like spicy food.", "pic": "🌶️", "help": "Picante means spicy. Lo picante = spicy stuff." }
+      ],
+      "frame": {
+        "id": "me-encantan-x",
+        "es": "Me encantan {x}.",
+        "en": "I love {x}.",
+        "help": "Use encantan (with an N) when you love more than one thing.",
+        "fillers": [
+          { "es": "los tacos", "en": "tacos", "pic": "🌮", "tag": "food" },
+          { "es": "las quesadillas", "en": "quesadillas", "pic": "🧀", "tag": "food" },
+          { "es": "los churros", "en": "churros", "pic": "🥖", "tag": "food" },
+          { "es": "las palomitas", "en": "popcorn", "pic": "🍿", "tag": "food" }
+        ]
+      },
+      "qa": [
+        { "q": "¿Te gusta lo picante?", "qEn": "Do you like spicy food?", "pic": "🌶️", "open": true, "accept": ["si me gusta {any}", "si me gusta", "si", "no me gusta lo picante", "no me gusta", "no", "me encanta"], "model": "No me gusta lo picante.", "hint": "Sí, me gusta. / No me gusta lo picante.", "concept": "no-me-gusta-lo-picante" },
+        { "q": "¿Qué comida te encanta?", "qEn": "What food do you love?", "open": true, "accept": ["me encantan {any}", "me encanta {any}", "me gusta {any}", "{any}"], "model": "Me encantan los tacos.", "hint": "Me encantan ___.", "concept": "me-encantan-x" },
+        { "q": "Prueba el taco. ¿Cómo está?", "qEn": "Try the taco. How is it?", "pic": "🌮", "say": "¡Está muy rico!", "concept": "esta-muy-rico" }
+      ]
+    },
+    {
+      "id": "u4-l5",
+      "type": "roleplay",
+      "title": "The taco stand",
+      "subtitle": "Roleplay",
+      "icon": "🎭",
+      "canDo": "I can order and pay at a taco stand",
+      "scenario": "After a game, you and your teammates stop at Don Beto's taco stand.",
+      "character": { "name": "Don Beto", "emoji": "🌮", "color": "#FF5A5F" },
+      "start": "order",
+      "nodes": {
+        "order": { "say": "¡Buenas tardes! ¿Qué te sirvo?", "en": "Good afternoon! What can I get you?", "reply": { "accept": ["quiero {any} por favor", "quiero {any}", "{any} por favor", "{any}"], "model": "Quiero unos tacos, por favor.", "hint": "Quiero ___, por favor." }, "next": "spicy" },
+        "spicy": { "say": "¡Claro! ¿Con o sin picante?", "en": "Sure! With or without spicy sauce?", "reply": { "model": "Sin picante, por favor.", "hint": "Con picante. / Sin picante.", "branches": [ { "accept": ["con picante", "con", "con mucho picante", "si"], "next": "brave" }, { "accept": ["sin picante", "sin", "sin picante por favor", "no"], "next": "mild" } ] }, "next": "mild" },
+        "brave": { "say": "¡Eres muy valiente! ¿Y para tomar?", "en": "You're very brave! And to drink?", "reply": { "accept": ["quiero {any} por favor", "quiero {any}", "{any} por favor", "{any}", "nada gracias"], "model": "Quiero un agua fresca, por favor.", "hint": "Quiero ___, por favor." }, "next": "pay" },
+        "mild": { "say": "Sin picante, muy bien. ¿Y para tomar?", "en": "No spicy sauce, got it. And to drink?", "reply": { "accept": ["quiero {any} por favor", "quiero {any}", "{any} por favor", "{any}", "nada gracias"], "model": "Quiero un agua fresca, por favor.", "hint": "Quiero ___, por favor." }, "next": "pay" },
+        "pay": { "say": "Son cuarenta pesos.", "en": "That's forty pesos.", "reply": { "accept": ["aqui tiene", "aqui esta", "gracias", "aqui tiene gracias", "toma"], "model": "Aquí tiene. ¡Gracias!", "hint": "Aquí tiene." }, "next": "taste" },
+        "taste": { "say": "¡Gracias! ¿Cómo están los tacos?", "en": "Thank you! How are the tacos?", "reply": { "accept": ["estan muy ricos", "esta muy rico", "muy ricos", "ricos", "me encantan", "deliciosos", "{any} rico"], "model": "¡Están muy ricos!", "hint": "¡Están muy ricos!" }, "next": "end" },
+        "end": { "say": "¡Qué bueno! ¡Vuelve pronto!", "en": "Great! Come back soon!", "end": true }
+      }
+    },
+    { "id": "u4-l6", "type": "review", "title": "Unit review", "subtitle": "Food and snacks", "icon": "🔁" },
+    { "id": "u4-l7", "type": "checkpoint", "title": "Check your progress", "subtitle": "Units 3–4", "icon": "🏁" }
+  ]
+}
