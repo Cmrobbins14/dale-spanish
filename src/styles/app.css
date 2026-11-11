@@ -422,7 +422,7 @@ button, .tap, [role='button'], .chip, .tab, nav {
 .chart { width: 100%; height: auto; display: block; }
 .chart .bar { fill: var(--c-primary); }
 .chart .bar.met { fill: var(--c-field); }
-.chart .axis { fill: var(--c-ink-3); font-size: 11px; font-weight: 700; font-family: var(--font-body); }
+.chart .axis { fill: var(--c-ink-3); font-size: 15px; font-weight: 700; font-family: var(--font-body); }
 .chart .goal-line { stroke: var(--c-accent); stroke-dasharray: 5 5; stroke-width: 2; }
 .chart .line { fill: none; stroke: var(--c-teal); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .chart .dot { fill: var(--c-teal); }

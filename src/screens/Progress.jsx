@@ -41,7 +41,7 @@ export function Progress() {
           <h2>Liga {tier.name}</h2>
           <div class="bar-row" style={{ marginTop: 8 }}>
             <div class="track"><div style={{ width: `${Math.min(100, (thisWeek / target) * 100)}%`, background: tier.color }} /></div>
-            <span class="small" style={{ fontWeight: 800 }}>{thisWeek}/{target} XP</span>
+            <span class="small" style={{ fontWeight: 800, whiteSpace: 'nowrap' }}>{thisWeek} XP this week</span>
           </div>
           <p class="muted small" style={{ fontWeight: 700, marginTop: 4 }}>
             {p.league.tier >= TIERS.length - 1 ? 'Top league! Legendary.' : thisWeek >= target ? `You're on track to reach Liga ${TIERS[p.league.tier + 1].name}!` : `Earn ${target} XP this week to move up to Liga ${TIERS[p.league.tier + 1].name}.`}

@@ -5,7 +5,7 @@ export function MinutesChart({ days, today, goalMin, n = 14 }) {
   const dates = lastNDays(today, n);
   const vals = dates.map((d) => (days[d]?.sec || 0) / 60);
   const max = Math.max(goalMin * 1.25, ...vals, 1);
-  const W = 640, H = 200, pad = 28, bw = (W - pad) / n;
+  const W = 1000, H = 220, pad = 28, bw = (W - pad) / n;
   const y = (v) => H - 24 - (v / max) * (H - 40);
   return (
     <svg class="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Minutes practiced, last ${n} days`}>
@@ -27,7 +27,7 @@ export function MinutesChart({ days, today, goalMin, n = 14 }) {
 export function AccuracyChart({ days, today, n = 14 }) {
   const dates = lastNDays(today, n);
   const pts = dates.map((d, i) => ({ i, v: days[d]?.scored ? days[d].scoreSum / days[d].scored : null })).filter((p) => p.v != null);
-  const W = 640, H = 180, pad = 32;
+  const W = 1000, H = 190, pad = 40;
   const x = (i) => pad + (i / (n - 1)) * (W - pad - 10);
   const y = (v) => H - 24 - v * (H - 44);
   if (!pts.length) return <p class="muted" style={{ fontWeight: 700 }}>Speak in a lesson to see your accuracy here.</p>;
